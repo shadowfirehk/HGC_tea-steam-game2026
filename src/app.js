@@ -292,6 +292,49 @@ const teas = [
   }
 ];
 
+const archiveUnlocks = {
+  "twenty-four": {
+    label: "清末至戰後香港苦力檔案",
+    source: "模擬舊報紙摘錄：港島碼頭工人長時間搬運貨物，夏季常受暑熱、潮濕與皮膚瘡毒困擾。涼茶舖因價廉、快捷，成為基層勞工調理身體與交換消息的地方。",
+    question: "根據這段史料，為何廿四味最適合放入碼頭苦力關卡？",
+    options: ["它回應勞工的濕熱、瘡毒與艱苦工作環境", "它主要用來展示富戶茶會禮儀", "它只是一種甜味汽水"],
+    answer: 0,
+    explain: "廿四味的重點不是按鈕配方，而是從基層勞工生活讀出濕熱、瘡毒、勞損與互助文化。"
+  },
+  "three-winter": {
+    label: "香港植物學與本土研究檔案",
+    source: "模擬人物訪談：植物學者把童年病患經驗、本土植物採集和現代研究結合，將崗梅、救必應、苦丁茶等冬青科植物轉化成三冬茶配方。",
+    question: "這段資料最能說明三冬茶的哪一種 STEAM 特點？",
+    options: ["傳統經驗與植物科學研究互相驗證", "完全不用歷史閱讀也可發明", "只重視包裝顏色"],
+    answer: 0,
+    explain: "三冬茶適合展示 Science 與 History 的連結：閱讀人物經歷後，再理解植物分類與配方設計。"
+  },
+  "jigucao-tea": {
+    label: "嶺南濕熱生活檔案",
+    source: "模擬地方志摘錄：嶺南地區暑濕重，居民常以雞骨草、夏枯草等草藥煲飲，回應飲食油膩、濕熱不適與社區日常保健需要。",
+    question: "玩家應從這段史料推論出甚麼任務方向？",
+    options: ["從氣候、飲食和身體反應推論祛濕配方", "只追求茶湯越甜越好", "完全忽略季節和地區環境"],
+    answer: 0,
+    explain: "雞骨草茶的歷史閱讀重點，是把地理環境、飲食習慣和身體症狀連成決策線索。"
+  },
+  "sugarcane-root": {
+    label: "家庭清潤飲食檔案",
+    source: "模擬口述歷史：老街坊回憶夏日家中常煲竹蔗茅根水，味道清甜，適合一家大小飲用，也反映涼茶不只治病，還是家庭照顧與日常養生。",
+    question: "這段口述歷史提醒玩家，竹蔗茅根的價值不只在於甚麼？",
+    options: ["不只在藥效，也在家庭照顧與生活文化", "只在於賣得最貴", "只在於顏色越黑越好"],
+    answer: 0,
+    explain: "這一關要讀出清潤飲品背後的家庭照顧、代際記憶和溫和配方設計。"
+  },
+  "old-hk": {
+    label: "舊香港涼茶舖與制水危機檔案",
+    source: "模擬報紙剪報：1963 年香港曾實施制水，市民珍惜每一滴水。傳統涼茶舖既要照顧街坊，也要思考儲水、節水和保溫器具的運用。",
+    question: "如果把這段史料轉成遊戲任務，最合理的工程挑戰是甚麼？",
+    options: ["在水資源有限下設計節水煲製和儲水流程", "把所有涼茶倒掉重新煲", "只增加糖分來掩蓋問題"],
+    answer: 0,
+    explain: "舊香港關卡應把歷史事件變成 Engineering 問題：節水、儲存、流程控制和社區照顧。"
+  }
+};
+
 const innovationOptions = {
   product: [
     { id: "smart-pot", name: "智能涼茶煲", text: "以感測器和自動火力控制，幫助學生安全地重現傳統煲製過程。" },
@@ -460,17 +503,17 @@ function cookHint(kind) {
   const hints = {
     water: {
       novice: `新手提示：把水量調到 ${exactWater}。水太少會太苦，水太多會變淡。`,
-      normal: intelUnlocked ? `課堂提示：史料已解鎖目標水量 ${exactWater}，你要控制濃度接近配方。` : "課堂提示：先從 NPC 情報推敲水量；濕熱、複方或清潤配方用水不同。",
+      normal: "課堂提示：比較藥材多少與茶色深度，水量要避免過濃或過淡。",
       expert: "高手提示：不直接顯示安全答案。請根據藥材多少、茶色深度和濃度風險判斷水量。"
     },
     heat: {
       novice: `新手提示：本關目標火候是「${targetHeat}」。${hasFlower ? "金銀花忌猛火久熬，宜中火微沸或後下。" : "留意水面氣泡大小和蒸氣量。"}`,
-      normal: intelUnlocked ? `課堂提示：${activeTea.intel.recipeHint} 目標火候：${targetHeat}。` : "課堂提示：史料會提示火候方向；花葉類、根莖類和複方不一定同火候。",
+      normal: "課堂提示：先判斷是花葉類、根莖類還是複方，再選火候。",
       expert: hasFlower ? "高手提示：花葉類重在保留芳香與活性成分，看到大量蒸氣時要警覺。" : "高手提示：只看沸騰狀態判斷；大泡、微沸、小泡代表不同萃取節奏。"
     },
     time: {
       novice: `新手提示：煲到接近 ${exactTime} 就可以完成出爐。`,
-      normal: intelUnlocked ? `課堂提示：目標時間 ${exactTime}，接近即可；時間過長會增加苦味和茶色深度。` : "課堂提示：閱讀情報後會解鎖時間；先留意藥材質地和茶色變化。",
+      normal: "課堂提示：時間影響苦味和茶色；根據史料與鍋內變化收火。",
       expert: "高手提示：不直接給時間答案。觀察茶色、氣泡和配方性質，過煲會提高苦味並損失部分成分。"
     }
   };
@@ -495,7 +538,16 @@ function addInsight(text) {
 }
 
 function blankRecord() {
-  return { completed: {}, bestScores: {}, lastPlayed: null };
+  return { completed: {}, bestScores: {}, archives: {}, lastPlayed: null };
+}
+
+function normalizeRecord(record = {}) {
+  return {
+    completed: record.completed || {},
+    bestScores: record.bestScores || {},
+    archives: record.archives || {},
+    lastPlayed: record.lastPlayed || null
+  };
 }
 
 function sanitizePlayerName(name) {
@@ -550,14 +602,14 @@ function currentPlayerName() {
 function loadRecord() {
   const store = loadRecordStore();
   const player = sanitizePlayerName(store.activePlayer);
-  return store.profiles[player] || blankRecord();
+  return normalizeRecord(store.profiles[player] || blankRecord());
 }
 
 function saveRecord(record) {
   const store = loadRecordStore();
   const player = sanitizePlayerName(store.activePlayer);
   store.activePlayer = player;
-  store.profiles[player] = record;
+  store.profiles[player] = normalizeRecord(record);
   saveRecordStore(store);
 }
 
@@ -610,13 +662,14 @@ function renderPersonalRecord(record = loadRecord()) {
   if (!personalRecordPanel) return;
   const completed = completedTeaIds(record);
   const master = completed.length === teas.length;
+  const archiveState = archiveProgress(record);
   const player = currentPlayerName();
   personalRecordPanel.innerHTML = `
     <section class="record-card">
       <div>
         <span class="era-chip">個人記錄</span>
         <h3>${master ? "涼茶宗師徽章已解鎖" : "涼茶任務收集中"}</h3>
-        <p>目前身份：<b>${escapeHtml(player)}</b>。已完成 ${completed.length}/${teas.length} 款涼茶任務。完成全部任務可得到「涼茶宗師」徽章。</p>
+        <p>目前身份：<b>${escapeHtml(player)}</b>。已完成 ${completed.length}/${teas.length} 款涼茶任務，已解鎖 ${archiveState.unlocked.length}/${archiveState.requiredIds.length} 份歷史檔案。完成全部任務可得到「涼茶宗師」徽章。</p>
         <div class="player-tools">
           <label>
             <span>新身份 / 組別</span>
@@ -631,7 +684,7 @@ function renderPersonalRecord(record = loadRecord()) {
       <div class="record-grid">
         ${teas.map((tea) => `
           <span class="${record.completed[tea.id] ? "done" : ""}">
-            ${record.completed[tea.id] ? "已完成" : "未完成"} · ${tea.name}${record.bestScores[tea.id] ? ` · 最高 ${record.bestScores[tea.id]}` : ""}
+            ${record.completed[tea.id] ? "已完成" : "未完成"} · ${tea.name}${archiveForTea(tea) ? ` · ${record.archives?.[tea.id] ? "檔案已讀" : "檔案未解鎖"}` : " · 入門任務"}${record.bestScores[tea.id] ? ` · 最高 ${record.bestScores[tea.id]}` : ""}
           </span>
         `).join("")}
       </div>
@@ -667,20 +720,66 @@ function renderDifficultySelector() {
   `).join("");
 }
 
+function archiveForTea(tea) {
+  return archiveUnlocks[tea.id];
+}
+
+function isTeaUnlocked(tea, record = loadRecord()) {
+  const archive = archiveForTea(tea);
+  return !archive || Boolean(record.archives?.[tea.id]);
+}
+
+function archiveProgress(record = loadRecord()) {
+  const requiredIds = Object.keys(archiveUnlocks);
+  const unlocked = requiredIds.filter((id) => record.archives?.[id]);
+  return { requiredIds, unlocked };
+}
+
+function renderArchiveUnlock(tea, record) {
+  const archive = archiveForTea(tea);
+  if (!archive || record.archives?.[tea.id]) return "";
+  return `
+    <section class="archive-unlock" aria-label="${tea.name} 歷史檔案解鎖">
+      <div class="archive-head">
+        <span class="era-chip">歷史檔案鎖定</span>
+        <strong>${archive.label}</strong>
+      </div>
+      <p class="archive-source">${archive.source}</p>
+      <h4>${archive.question}</h4>
+      <div class="archive-options">
+        ${archive.options.map((option, index) => `
+          <button class="mini-button archive-answer" type="button" data-archive-tea="${tea.id}" data-archive-answer="${index}">
+            ${option}
+          </button>
+        `).join("")}
+      </div>
+      <p class="archive-feedback" id="archive-feedback-${tea.id}">先讀史料，再用歷史推論解鎖任務。</p>
+    </section>
+  `;
+}
+
 function renderTeaGrid() {
   const record = loadRecord();
-  teaGrid.innerHTML = teas.map((tea) => `
-    <button class="tea-card" type="button" data-tea="${tea.id}">
-      <span class="tea-image sprite" style='${spriteStyle("tea", tea.sprite)}' role="img" aria-label="${tea.name}"></span>
-      <span class="tea-card-content">
-        <span class="era-chip">${tea.level} · ${tea.concept}</span>
-        ${record.completed[tea.id] ? `<span class="complete-chip">已完成${record.bestScores[tea.id] ? ` · ${record.bestScores[tea.id]}分` : ""}</span>` : ""}
-        <h3>${tea.name}</h3>
-        <p>${tea.summary}</p>
-        <span class="start-chip">點擊開始任務</span>
-      </span>
-    </button>
-  `).join("");
+  teaGrid.innerHTML = teas.map((tea) => {
+    const unlocked = isTeaUnlocked(tea, record);
+    const archive = archiveForTea(tea);
+    return `
+      <article class="tea-card ${unlocked ? "" : "is-locked"} ${archive ? "has-archive" : "starter-card"}">
+        <button class="tea-card-main" type="button" data-tea="${tea.id}" ${unlocked ? "" : "disabled"} aria-disabled="${unlocked ? "false" : "true"}">
+          <span class="tea-image sprite" style='${spriteStyle("tea", tea.sprite)}' role="img" aria-label="${tea.name}"></span>
+          <span class="tea-card-content">
+            <span class="era-chip">${tea.level} · ${tea.concept}</span>
+            ${record.completed[tea.id] ? `<span class="complete-chip">已完成${record.bestScores[tea.id] ? ` · ${record.bestScores[tea.id]}分` : ""}</span>` : ""}
+            ${archive && unlocked ? `<span class="archive-chip">史料已解鎖</span>` : ""}
+            <h3>${tea.name}</h3>
+            <p>${tea.summary}</p>
+            <span class="start-chip">${unlocked ? "開始課堂任務" : "先完成歷史閱讀"}</span>
+          </span>
+        </button>
+        ${renderArchiveUnlock(tea, record)}
+      </article>
+    `;
+  }).join("");
   renderPersonalRecord(record);
 }
 
@@ -762,8 +861,44 @@ function verifySourceCard(cardIndex, answerIndex) {
   if (feedback) feedback.textContent = `${correct ? "判斷正確。" : "再想想史料重點。"}${card.explain}`;
 }
 
+function verifyArchiveUnlock(teaId, answerIndex) {
+  const archive = archiveUnlocks[teaId];
+  const tea = teas.find((item) => item.id === teaId);
+  if (!archive || !tea) return;
+
+  const correct = answerIndex === archive.answer;
+  const feedback = $(`#archive-feedback-${teaId}`);
+  document.querySelectorAll(`[data-archive-tea="${teaId}"]`).forEach((button) => {
+    const isAnswer = Number(button.dataset.archiveAnswer) === archive.answer;
+    const isSelected = Number(button.dataset.archiveAnswer) === answerIndex;
+    button.disabled = true;
+    button.classList.toggle("is-correct", isAnswer);
+    button.classList.toggle("is-wrong", isSelected && !correct);
+  });
+
+  if (correct) {
+    const record = loadRecord();
+    record.archives[teaId] = true;
+    saveRecord(record);
+    if (feedback) feedback.textContent = `解鎖成功。${archive.explain}`;
+    coachLine.textContent = `你已把「${archive.label}」轉化成研究線索，${tea.name} 任務已解鎖。`;
+    setTimeout(renderTeaGrid, 650);
+    return;
+  }
+
+  if (feedback) feedback.textContent = `未解鎖。提示：先找出史料中的人物、時代困難和社會需要。${archive.explain}`;
+  coachLine.textContent = "先不要急著配方，評審想看的是：你能否由史料讀出問題，再把問題轉化成設計。";
+}
+
 function selectTea(teaId) {
   activeTea = teas.find((tea) => tea.id === teaId);
+  if (!activeTea) return;
+  if (!isTeaUnlocked(activeTea)) {
+    coachLine.textContent = "這張任務卡仍未解鎖。請先閱讀茶單上的歷史檔案，答對推論題後再開始任務。";
+    renderTeaGrid();
+    location.hash = "tea-menu";
+    return;
+  }
   gathered = new Set();
   gatherScore = 100;
   wrongPicks = 0;
@@ -843,7 +978,10 @@ function renderHistory() {
 function renderNpcCard(tea) {
   return `
     <article class="npc-card npc-${tea.npc.type}" aria-label="NPC 角色">
-      <div class="npc-logo" aria-hidden="true">${tea.npc.symbol}</div>
+      <div class="npc-portrait">
+        <img src="./assets/npc/${tea.npc.type}.jpg" alt="${tea.npc.name}" loading="lazy" />
+        <span class="npc-symbol" aria-hidden="true">${tea.npc.symbol}</span>
+      </div>
       <div>
         <span class="era-chip">NPC 來店</span>
         <h4>${tea.npc.name}</h4>
@@ -1446,6 +1584,7 @@ function renderOptionGroup(group, title) {
 
 function badgeForScore(total, record = loadRecord()) {
   const badges = [];
+  if (archiveForTea(activeTea) && record.archives?.[activeTea.id]) badges.push("歷史檔案解謎徽章");
   if (intelUnlocked) badges.push("史料情報徽章");
   if (historyCorrect && dilemmaCorrect) badges.push("歷史辨證徽章");
   if (wrongPicks === 0) badges.push("採藥神眼徽章");
@@ -1570,6 +1709,12 @@ function resetGame() {
 }
 
 teaGrid.addEventListener("click", (event) => {
+  const archiveButton = event.target.closest("[data-archive-answer]");
+  if (archiveButton) {
+    verifyArchiveUnlock(archiveButton.dataset.archiveTea, Number(archiveButton.dataset.archiveAnswer));
+    return;
+  }
+
   const card = event.target.closest("[data-tea]");
   if (card) selectTea(card.dataset.tea);
 });
