@@ -638,6 +638,17 @@ img {
   font-weight: 900;
 }
 
+.archive-teaser {
+  margin: 0.75rem 0 0;
+  padding: 0.72rem;
+  border-radius: var(--radius);
+  background: #fff3d2;
+  border: 1px solid rgba(224, 165, 40, 0.52);
+  color: var(--tile-dark) !important;
+  font-weight: 850;
+  line-height: 1.45;
+}
+
 .archive-unlock {
   margin-top: 0.9rem;
   padding: 0.9rem;
@@ -667,6 +678,7 @@ img {
 .archive-options {
   display: grid;
   gap: 0.5rem;
+  overflow: visible;
 }
 
 .archive-answer {
@@ -690,6 +702,164 @@ img {
   color: var(--tile-dark) !important;
   font-weight: 850;
   line-height: 1.48;
+}
+
+.archive-modal-root:empty {
+  display: none;
+}
+
+.archive-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(23, 35, 31, 0.54);
+  backdrop-filter: blur(4px);
+}
+
+.archive-modal {
+  position: fixed;
+  inset: min(4vh, 2rem) max(1rem, calc((100vw - 980px) / 2));
+  z-index: 91;
+  display: block;
+  max-height: 92vh;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  overflow: auto;
+  border-radius: var(--radius);
+  border: 1px solid rgba(15, 111, 90, 0.22);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(255, 226, 154, 0.45), transparent 28%),
+    #fffaf0;
+  box-shadow: 0 34px 90px rgba(4, 32, 24, 0.32);
+}
+
+.archive-modal-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: start;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1rem;
+}
+
+.archive-modal-head h3 {
+  margin: 0;
+  color: var(--red);
+  font-size: clamp(1.75rem, 4vw, 2.8rem);
+  line-height: 1.08;
+}
+
+.archive-modal-head p {
+  margin: 0.45rem 0 0;
+  color: var(--ink-soft);
+  line-height: 1.58;
+  font-weight: 780;
+}
+
+.icon-button.archive-close {
+  display: grid;
+  place-items: center;
+  width: 2.45rem;
+  height: 2.45rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--red-dark);
+  background: #fff3d2;
+  font-size: 1.5rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.archive-documents {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1rem;
+  overflow: visible;
+}
+
+.archive-document,
+.archive-question {
+  display: block;
+  min-height: max-content;
+  height: auto;
+  overflow: visible;
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(15, 111, 90, 0.18);
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: inset 5px 0 0 rgba(224, 165, 40, 0.65);
+}
+
+.archive-document h4,
+.archive-question h4 {
+  margin: 0 0 0.65rem;
+  color: var(--tile-dark);
+  line-height: 1.35;
+}
+
+.archive-document p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.72;
+  font-weight: 760;
+  overflow-wrap: anywhere;
+}
+
+.archive-report {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1rem;
+  overflow: visible;
+}
+
+.archive-option {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.65rem;
+  align-items: start;
+  padding: 0.78rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: #fffaf0;
+  color: var(--ink);
+  font-weight: 800;
+  line-height: 1.45;
+  cursor: pointer;
+  min-height: max-content;
+}
+
+.archive-option input {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: 0.15rem;
+  accent-color: var(--tile);
+}
+
+.archive-explain {
+  margin: 0.65rem 0 0;
+  padding: 0.7rem;
+  border-radius: var(--radius);
+  color: var(--ink-soft);
+  background: rgba(232, 243, 235, 0.8);
+  font-weight: 820;
+  line-height: 1.48;
+}
+
+.archive-explain:empty {
+  display: none;
+}
+
+.archive-explain.is-correct {
+  color: var(--tile-dark);
+  background: #e8f3eb;
+}
+
+.archive-explain.is-wrong {
+  color: var(--red-dark);
+  background: #f8dfd8;
+}
+
+body.has-archive-modal {
+  overflow: hidden;
 }
 
 .era-chip {
@@ -874,6 +1044,25 @@ img {
   border-radius: var(--radius);
   background: #fff3d2;
   border-left: 5px solid var(--amber);
+}
+
+.research-chain {
+  padding: 1rem;
+  border: 1px solid rgba(15, 111, 90, 0.24);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(232, 243, 235, 0.88), rgba(255, 250, 240, 0.98));
+  box-shadow: inset 5px 0 0 rgba(15, 111, 90, 0.42);
+}
+
+.research-chain p {
+  margin: 0.45rem 0 0;
+  color: var(--ink-soft);
+  line-height: 1.58;
+}
+
+.research-chain b {
+  color: var(--tile-dark);
 }
 
 .npc-card {

@@ -84,6 +84,12 @@
     "sourcePage": "https://commons.wikimedia.org/wiki/File:Licorice_slices_(20240123).jpg"
   },
   {
+    "id": "mint",
+    "localFile": "assets/ingredient-photos/mint.jpg",
+    "sourceFile": "Dried mint on dehydrator.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Dried_mint_on_dehydrator.jpg"
+  },
+  {
     "id": "rocksugar",
     "localFile": "assets/ingredient-photos/rocksugar.jpg",
     "sourceFile": "Single crystal yellow rock sugar.jpg",

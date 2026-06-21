@@ -13,6 +13,7 @@ const ingredients = [
   { id: "sugarcane", name: "竹蔗", sprite: 11, clue: "清甜多汁，常與茅根同煲。", prep: "劈成小段", tag: "清甜", lore: "竹蔗茅根水是香港家庭記憶之一，味道清甜，連小朋友也容易接受。" },
   { id: "imperatae", name: "茅根", sprite: 12, clue: "白色根莖，常配竹蔗作清潤飲品。", prep: "洗淨泥沙", tag: "清潤", lore: "茅根一類草根藥材提醒玩家：涼茶是嶺南草木熬成的藥飲。" },
   { id: "licorice", name: "甘草", sprite: 13, clue: "常切成圓形薄片，外皮紅棕，切面淡黃並有放射狀紋理。", prep: "薄片略洗", tag: "調和", lore: "甘草根帶天然甜味，可調和苦味；在圖鑑中要看見淡黃色切面與類似年輪的紋理。" },
+  { id: "mint", name: "薄荷", sprite: 14, clue: "乾燥葉片仍帶清涼芳香，常用於疏散風熱、宣肺利咽。", prep: "後下短煎", tag: "宣肺", lore: "薄荷含揮發性芳香成分，適合引導學生理解花葉類與芳香類藥材不宜長時間猛火熬煮。" },
   { id: "rocksugar", name: "冰糖", sprite: 13, clue: "晶體透明，用來調和苦味，讓藥飲更容易入口。", prep: "後段加入", tag: "調味", lore: "一點甜味背後也有人情：老茶舖讓清苦生活多一口安慰。" },
   { id: "water", name: "清水", sprite: 14, clue: "所有藥草都要靠它慢慢煎出味道。", prep: "量好水位", tag: "火候", lore: "涼茶重視火候與水量，從家庭煲製到街頭銅壺，都是手藝的一部分。" },
   { id: "pot", name: "銅壺", sprite: 15, clue: "舊香港涼茶舖的標誌之一。", prep: "預熱銅壺", tag: "市井", lore: "五六十年代香港涼茶舖常見銅葫蘆招牌與大茶壺，是城市街景的一部分。" }
@@ -186,6 +187,41 @@ const teas = [
     ingredients: ["honeysuckle", "selfheal", "licorice"]
   },
   {
+    id: "cold-tea",
+    name: "傳統感冒茶",
+    sprite: 2,
+    level: "工業香港",
+    concept: "勞工健康",
+    summary: "以 1960 年代工廠區為背景，理解基層工人如何依靠涼茶作快速調理。",
+    scenario: "觀塘工廠下班後，一位工人喉嚨乾痛、頭痛發熱，明天仍要開工。",
+    npc: { name: "阿芬", role: "1960年代製衣廠女工", symbol: "工", type: "worker" },
+    intel: {
+      title: "工廠區涼茶舖排隊記",
+      source: "「製衣車間棉絮飛揚，窗少風弱。工人日做十小時，喉乾頭痛，卻怕請假扣工錢。下班後，涼茶舖前人龍最長。」",
+      clues: ["背景是工廠化與基層勞動", "症狀是喉乾、頭痛、初起感冒", "芳香宣肺藥材宜後下短煎"],
+      recipeHint: "情報推論：感冒茶需清熱解表、宣肺利咽；薄荷等芳香葉類應後下短煎，不宜長時間猛火。"
+    },
+    learningGoals: ["理解 1960 年代香港工業化與勞工健康", "從史料推論基層工人的醫療選擇", "分辨芳香葉類藥材的火候控制"],
+    story: "六十年代香港製衣業與電子業蓬勃，工廠區通風不足、棉絮飛揚，很多工人小病也不敢請假。傳統感冒茶反映涼茶舖如何成為基層勞工快速調理和互相支持的地方。",
+    dilemma: {
+      question: "面對這位工人，你最應先理解甚麼？",
+      options: ["她不是貪方便，而是受工作環境和經濟壓力影響", "她只是追求時尚飲品", "她一定要飲最苦廿四味才算有效"],
+      answer: 0,
+      explain: "歷史同理心要求學生看見工廠環境、計件工資和勞工福利不足，而不只是看症狀。"
+    },
+    historyQuestion: {
+      question: "1960 年代工廠區感冒茶流行，最能反映哪種香港社會現實？",
+      options: ["基層工人勞動強度高，又缺乏充足醫療和休息保障", "香港市民只把涼茶當高級消閒", "工廠區完全沒有健康問題"],
+      answer: 0,
+      explain: "感冒茶大受歡迎，反映工業化下的勞工健康、工作環境與基層生活壓力。"
+    },
+    taste: "辛涼回甘",
+    water: 1600,
+    time: 20,
+    preferredHeat: "medium",
+    ingredients: ["honeysuckle", "chrysanthemum", "mint", "licorice"]
+  },
+  {
     id: "jigucao-tea",
     name: "雞骨草茶",
     sprite: 3,
@@ -293,45 +329,232 @@ const teas = [
 ];
 
 const archiveUnlocks = {
+  "five-flower": {
+    label: "五花茶：嶺南氣候與家庭防病",
+    documents: [
+      {
+        title: "文獻 A：民國時期嶺南民間風俗紀錄（模擬史料）",
+        text: "嶺南夏日冗長，自四月至十月皆酷熱難耐。平民之家，常受「暑濕」所困，症見身熱口渴、小便短赤、精神倦怠。坊間傳承「五花」之方，採金銀花、菊花、雞蛋花、木棉花、槐花熬製。此方不似廿四味之苦澀，其氣芳香，微甜易入口，婦孺皆樂意飲用，為仲夏家居常備之茶。"
+      }
+    ],
+    questions: [
+      {
+        type: "single",
+        tag: "歷史與社會考證",
+        question: "根據文獻 A，為什麼五花茶在嶺南民間，特別是婦女與兒童之間，普及率會比廿四味更高？",
+        options: ["因為五花茶的售價比廿四味便宜十倍。", "因為五花茶使用花類藥材，口感微甜且具芳香，比極度苦澀的廿四味更易被婦孺接受，適合日常家庭防病。", "因為五花茶是清朝宮廷流傳出來的秘方。"],
+        answers: [1],
+        explain: "五花茶的歷史重點是家庭化、日常化和易入口；學生要從文本讀出民間普及的社會原因。"
+      },
+      {
+        type: "single",
+        tag: "STEAM 科學變數控制",
+        question: "五花茶多用花類藥材，花瓣中的揮發油在高溫下容易隨蒸氣流失。遊戲中應如何控制火候與時間？",
+        options: ["選擇猛火急攻，持續熬煮 2 小時，直到水全部蒸發。", "選擇文火慢熬，且總熬煮時間不宜過長，約 15 至 20 分鐘，一聞到濃郁花香即可關火，以保留揮發油。", "不用加熱，直接用冷水泡開。"],
+        answers: [1],
+        explain: "花葉類與芳香類藥材重在保留清香成分，火候與時間要比根莖類更溫和。"
+      }
+    ],
+    successTitle: "考證成功！五花茶配方已解鎖",
+    successText: "你讀懂了嶺南暑濕、家庭防病和花類藥材短煎的科學原理。",
+    unlockEffect: "五花茶對婦孺、學生與濕熱家庭情境獲得雙倍療效。",
+    taskHint: "進入煲製坊後，請以中火或文火、較短時間保留花香。"
+  },
   "twenty-four": {
-    label: "清末至戰後香港苦力檔案",
-    source: "模擬舊報紙摘錄：港島碼頭工人長時間搬運貨物，夏季常受暑熱、潮濕與皮膚瘡毒困擾。涼茶舖因價廉、快捷，成為基層勞工調理身體與交換消息的地方。",
-    question: "根據這段史料，為何廿四味最適合放入碼頭苦力關卡？",
-    options: ["它回應勞工的濕熱、瘡毒與艱苦工作環境", "它主要用來展示富戶茶會禮儀", "它只是一種甜味汽水"],
-    answer: 0,
-    explain: "廿四味的重點不是按鈕配方，而是從基層勞工生活讀出濕熱、瘡毒、勞損與互助文化。"
+    label: "廿四味：1894 鼠疫與太平山街",
+    documents: [
+      {
+        title: "文獻甲：1894 年香港華人對殖民地防疫措施之恐懼（改編史料）",
+        text: "日前面臨疫症，潔淨局官員強行進入華人住宅，搜查病者。凡有染病，即強制擄至西醫船隔離，更將死者剖腹檢查。華人社會大為震恐，深恐西醫割體剜眼，且船上斷絕家人音訊，與送死無異。基層百姓寧可隱瞞病情，藏匿於唐樓之中，尋求坊間草藥煎熬，亦不願向官府通報。"
+      },
+      {
+        title: "文獻乙：嶺南草藥文獻關於廿四味之記載（模擬史料）",
+        text: "廿四味並非固定方劑，常隨四時感冒調整。其主料多為嶺南本土野生之剛烈草藥，如三椏苦、崗梅根、九層糕、苦瓜乾等。此等藥材多屬樹皮、粗根、硬莖，極其苦澀，能清解入血之熱毒與瘴癘。於 1894 年大疫期間，上環一帶涼茶檔夜夜開爐，煎製黑苦茶，苦力走卒皆視之為避疫、抗發熱之護身符。"
+      }
+    ],
+    questions: [
+      {
+        type: "multi",
+        tag: "歷史與社會考證",
+        question: "根據文獻甲與文獻乙，1894 年太平山街底層華人為何寧願飲用極苦的廿四味，也不願前往殖民政府設立的西醫醫療船求醫？",
+        options: ["文化與心理恐懼：當時華人對西醫解剖、隔離極度陌生與恐懼。", "經濟與現實困境：華人基層貧困，街頭涼茶是較易負擔的醫療替代。", "殖民政府強硬手段：潔淨局軍警強行搜屋，引起華人反感與不信任。", "科學證實：當時華人已透過顯微鏡證實廿四味能 100% 殺死鼠疫桿菌。"],
+        answers: [0, 1, 2],
+        explain: "此題考歷史同理心：涼茶在當時不只是一杯飲品，也承載恐懼、貧窮、文化衝突和民間自救。"
+      },
+      {
+        type: "single",
+        tag: "STEAM 科學變數控制",
+        question: "廿四味多用樹皮、粗根與硬莖。根據固體溶出與熱傳導原理，遊戲中應如何設定煲煮參數？",
+        options: ["文火低溫 60°C 慢浸 10 分鐘即可。", "武火沸騰 100°C 後轉文火約 85°C 長熬 1.5 至 2 小時，讓水分滲透木質部並萃取有效成分。", "高壓急凍到零下 10°C 逼出汁液。"],
+        answers: [1],
+        explain: "不同植物部位要配合不同萃取條件；根莖硬材需要更長時間與較高初始溫度。"
+      }
+    ],
+    successTitle: "考證成功！廿四味配方已解鎖",
+    successText: "你解讀了 1894 年大疫的歷史現場，也掌握了根莖類藥材需長熬萃取的物理規律。",
+    unlockEffect: "系統已提升店內鍋爐的耐火耐燒度。",
+    taskHint: "現在有一位發熱咳嗽的碼頭苦力前來求助，請設定先武後文、長時間熬煮的黃金參數。"
+  },
+  "cold-tea": {
+    label: "傳統感冒茶：1960 年代工廠化與勞工健康",
+    documents: [
+      {
+        title: "文獻 B：1960 年代香港工業發展與勞工健康報告（節錄）",
+        text: "六十年代，香港製衣業與電子業蓬勃。新蒲崗、觀塘一帶工廠林立。數以萬計之工廠妹與男工，每日於通風不良、棉絮飛揚之車間工作逾十小時。工人常感喉嚨乾涸、頭痛發熱、感冒流涕。由於手工業計件工資微薄，工人不願請假就醫。每逢下班，工廠區外之涼茶舖便擠滿勞工，急需一碗能強效解表、驅風散寒之感冒茶，喝完矇頭大睡，翌日繼續開工。"
+      }
+    ],
+    questions: [
+      {
+        type: "multi",
+        tag: "歷史情境同理",
+        question: "根據文獻 B，1960 年代香港工廠區感冒茶大受歡迎，反映了當時怎樣的社會現實？",
+        options: ["基層工人勞動強度大，工作環境惡劣，例如棉絮多、通風差。", "勞工福利不足，工人因經濟壓力小病不願請假，依賴涼茶作快速調理。", "香港市民生活富裕，飲涼茶主要是一種時尚消閒活動。"],
+        answers: [0, 1],
+        explain: "感冒茶流行反映工業化下的勞工健康、工作環境和基層生活壓力。"
+      },
+      {
+        type: "single",
+        tag: "STEAM 工程與配方設計",
+        question: "面對長期在多塵、不通風環境工作，且有初期感冒發熱的工人 NPC，除了清熱草藥外，最應加入哪種宣肺止咳、疏散風熱的藥材？",
+        options: ["昂貴的冬蟲夏草，用於大補元氣。", "桑葉或薄荷，芳香成分有助宣肺利咽，減輕喉部不適。", "大量砂糖，用來掩蓋苦味。"],
+        answers: [1],
+        explain: "配方設計要對應工作環境和症狀；芳香宣肺藥材應配合短煎或後下。"
+      }
+    ],
+    successTitle: "考證成功！傳統感冒茶配方已解鎖",
+    successText: "你讀懂了 1960 年代工廠化下的勞工健康問題，也能把宣肺利咽的科學概念轉化為配方決策。",
+    unlockEffect: "感冒茶對工廠工人、喉嚨乾痛與初起感冒 NPC 產生雙倍療效。",
+    taskHint: "煲製時請加入薄荷，並避免芳香葉類長時間猛火熬煮。"
   },
   "three-winter": {
-    label: "香港植物學與本土研究檔案",
-    source: "模擬人物訪談：植物學者把童年病患經驗、本土植物採集和現代研究結合，將崗梅、救必應、苦丁茶等冬青科植物轉化成三冬茶配方。",
-    question: "這段資料最能說明三冬茶的哪一種 STEAM 特點？",
-    options: ["傳統經驗與植物科學研究互相驗證", "完全不用歷史閱讀也可發明", "只重視包裝顏色"],
-    answer: 0,
-    explain: "三冬茶適合展示 Science 與 History 的連結：閱讀人物經歷後，再理解植物分類與配方設計。"
+    label: "三冬茶：香港植物學與本土研究",
+    documents: [
+      {
+        title: "人物訪談：胡秀英教授與香港本土植物研究（模擬整理）",
+        text: "植物學者把童年病患經驗、本土植物採集和現代研究結合，將崗梅、救必應、苦丁茶等冬青科植物轉化成三冬茶配方。這個故事顯示傳統經驗可以經由觀察、分類與整理，成為可討論、可驗證的知識。"
+      }
+    ],
+    questions: [
+      {
+        type: "single",
+        tag: "歷史與科學連結",
+        question: "這段資料最能說明三冬茶的哪一種 STEAM 特點？",
+        options: ["傳統經驗與植物科學研究互相驗證。", "完全不用歷史閱讀也可發明。", "只重視包裝顏色。"],
+        answers: [0],
+        explain: "三冬茶展示 Science 與 History 的連結：閱讀人物經歷後，再理解植物分類與配方設計。"
+      }
+    ],
+    successTitle: "考證成功！三冬茶配方已解鎖",
+    successText: "你把人物故事轉化為植物學與配方設計線索。",
+    unlockEffect: "三冬茶研究卡已加入個人記錄。",
+    taskHint: "進入任務後，留意咽喉風熱與科學觀察的關係。"
   },
   "jigucao-tea": {
-    label: "嶺南濕熱生活檔案",
-    source: "模擬地方志摘錄：嶺南地區暑濕重，居民常以雞骨草、夏枯草等草藥煲飲，回應飲食油膩、濕熱不適與社區日常保健需要。",
-    question: "玩家應從這段史料推論出甚麼任務方向？",
-    options: ["從氣候、飲食和身體反應推論祛濕配方", "只追求茶湯越甜越好", "完全忽略季節和地區環境"],
-    answer: 0,
-    explain: "雞骨草茶的歷史閱讀重點，是把地理環境、飲食習慣和身體症狀連成決策線索。"
+    label: "雞骨草茶：嶺南濕熱生活",
+    documents: [
+      {
+        title: "地方志摘錄：嶺南濕熱與日常飲食（模擬史料）",
+        text: "嶺南地區暑濕重，居民常以雞骨草、夏枯草等草藥煲飲，回應飲食油膩、濕熱不適與社區日常保健需要。"
+      }
+    ],
+    questions: [
+      {
+        type: "single",
+        tag: "生活史推論",
+        question: "玩家應從這段史料推論出甚麼任務方向？",
+        options: ["從氣候、飲食和身體反應推論祛濕配方。", "只追求茶湯越甜越好。", "完全忽略季節和地區環境。"],
+        answers: [0],
+        explain: "雞骨草茶的閱讀重點，是把地理環境、飲食習慣和身體症狀連成決策線索。"
+      }
+    ],
+    successTitle: "考證成功！雞骨草茶配方已解鎖",
+    successText: "你能把嶺南氣候與飲食習慣轉化為祛濕配方判斷。",
+    unlockEffect: "祛濕生活卡已加入個人記錄。",
+    taskHint: "注意不是越苦越好，要看體質與症狀。"
   },
   "sugarcane-root": {
-    label: "家庭清潤飲食檔案",
-    source: "模擬口述歷史：老街坊回憶夏日家中常煲竹蔗茅根水，味道清甜，適合一家大小飲用，也反映涼茶不只治病，還是家庭照顧與日常養生。",
-    question: "這段口述歷史提醒玩家，竹蔗茅根的價值不只在於甚麼？",
-    options: ["不只在藥效，也在家庭照顧與生活文化", "只在於賣得最貴", "只在於顏色越黑越好"],
-    answer: 0,
-    explain: "這一關要讀出清潤飲品背後的家庭照顧、代際記憶和溫和配方設計。"
+    label: "竹蔗茅根：家庭清潤飲食",
+    documents: [
+      {
+        title: "口述歷史：夏日家庭清潤飲品（模擬整理）",
+        text: "老街坊回憶夏日家中常煲竹蔗茅根水，味道清甜，適合一家大小飲用，也反映涼茶不只治病，還是家庭照顧與日常養生。"
+      }
+    ],
+    questions: [
+      {
+        type: "single",
+        tag: "家庭生活史",
+        question: "這段口述歷史提醒玩家，竹蔗茅根的價值不只在於甚麼？",
+        options: ["不只在藥效，也在家庭照顧與生活文化。", "只在於賣得最貴。", "只在於顏色越黑越好。"],
+        answers: [0],
+        explain: "這一關要讀出清潤飲品背後的家庭照顧、代際記憶和溫和配方設計。"
+      }
+    ],
+    successTitle: "考證成功！竹蔗茅根配方已解鎖",
+    successText: "你看見涼茶如何進入家庭日常與代際照顧。",
+    unlockEffect: "家庭清潤卡已加入個人記錄。",
+    taskHint: "重點是水量充足、慢火清潤，而非煲到極苦。"
   },
   "old-hk": {
-    label: "舊香港涼茶舖與制水危機檔案",
-    source: "模擬報紙剪報：1963 年香港曾實施制水，市民珍惜每一滴水。傳統涼茶舖既要照顧街坊，也要思考儲水、節水和保溫器具的運用。",
-    question: "如果把這段史料轉成遊戲任務，最合理的工程挑戰是甚麼？",
-    options: ["在水資源有限下設計節水煲製和儲水流程", "把所有涼茶倒掉重新煲", "只增加糖分來掩蓋問題"],
-    answer: 0,
-    explain: "舊香港關卡應把歷史事件變成 Engineering 問題：節水、儲存、流程控制和社區照顧。"
+    label: "舊香港涼茶舖：制水危機與社區照顧",
+    documents: [
+      {
+        title: "報紙剪報：1963 年香港制水（模擬史料）",
+        text: "1963 年香港曾實施制水，市民珍惜每一滴水。傳統涼茶舖既要照顧街坊，也要思考儲水、節水和保溫器具的運用。"
+      }
+    ],
+    questions: [
+      {
+        type: "single",
+        tag: "工程解難",
+        question: "如果把這段史料轉成遊戲任務，最合理的工程挑戰是甚麼？",
+        options: ["在水資源有限下設計節水煲製和儲水流程。", "把所有涼茶倒掉重新煲。", "只增加糖分來掩蓋問題。"],
+        answers: [0],
+        explain: "舊香港關卡應把歷史事件變成工程問題：節水、儲存、流程控制和社區照顧。"
+      }
+    ],
+    successTitle: "考證成功！舊香港涼茶舖任務已解鎖",
+    successText: "你把制水危機轉化成工程與社區照顧問題。",
+    unlockEffect: "節水工程卡已加入個人記錄。",
+    taskHint: "留意水量、儲水和保溫器具的選擇。"
+  }
+};
+
+const socialProblemFrames = {
+  "five-flower": {
+    reading: "五嶺山下濕熱、花草入藥和民間配方流傳",
+    problem: "香港與嶺南地區春夏潮濕，學生容易把氣候、身體不適和日常預防連結起來",
+    value: "關心同學健康，尊重民間智慧"
+  },
+  "twenty-four": {
+    reading: "清末至戰後香港苦力、街頭涼茶舖和基層醫藥需要",
+    problem: "碼頭工人長時間勞動，在濕熱、勞損和醫療資源有限下需要廉價調理",
+    value: "同理基層、仁愛互助、服務社群"
+  },
+  "three-winter": {
+    reading: "香港本土植物研究、胡秀英教授故事和傳統配方現代化",
+    problem: "如何把口述經驗、植物學研究和校園健康教育連結起來",
+    value: "求真、創新、尊重科學與傳統"
+  },
+  "cold-tea": {
+    reading: "1960 年代香港工廠化、製衣業工人與涼茶舖排隊文化",
+    problem: "工廠工人在通風差、棉絮多和工時長的環境下容易感冒喉痛，卻因經濟壓力不願請假求醫",
+    value: "同理勞工、關愛基層、改善工作健康"
+  },
+  "jigucao-tea": {
+    reading: "嶺南濕熱生活、飲食習慣和家庭草藥調理",
+    problem: "城市學生常吃煎炸食物，又面對濕熱氣候，需要理解日常養生與環境關係",
+    value: "責任感、自我照顧、尊重生活文化"
+  },
+  "sugarcane-root": {
+    reading: "家庭清潤飲食、長者口述歷史和代際照顧",
+    problem: "如何讓年輕人理解長者的生活記憶，並把家庭照顧轉化成校園學習",
+    value: "孝親、關愛、珍惜家庭記憶"
+  },
+  "old-hk": {
+    reading: "舊香港涼茶舖、底層互助和 1963 年制水背景",
+    problem: "公共資源緊張時，社區如何用工程思維節水、儲水和照顧街坊",
+    value: "珍惜資源、承擔精神、非遺保育"
   }
 };
 
@@ -423,6 +646,7 @@ const guide = $("#ingredient-guide");
 const timelinePanel = $("#timeline-panel");
 const culturePanel = $("#culture-panel");
 const personalRecordPanel = $("#personal-record");
+const archiveModalRoot = $("#archive-modal-root");
 const stageLabel = $("#stage-label");
 const stageTitle = $("#stage-title");
 const coachLine = $("#coach-line");
@@ -738,24 +962,7 @@ function archiveProgress(record = loadRecord()) {
 function renderArchiveUnlock(tea, record) {
   const archive = archiveForTea(tea);
   if (!archive || record.archives?.[tea.id]) return "";
-  return `
-    <section class="archive-unlock" aria-label="${tea.name} 歷史檔案解鎖">
-      <div class="archive-head">
-        <span class="era-chip">歷史檔案鎖定</span>
-        <strong>${archive.label}</strong>
-      </div>
-      <p class="archive-source">${archive.source}</p>
-      <h4>${archive.question}</h4>
-      <div class="archive-options">
-        ${archive.options.map((option, index) => `
-          <button class="mini-button archive-answer" type="button" data-archive-tea="${tea.id}" data-archive-answer="${index}">
-            ${option}
-          </button>
-        `).join("")}
-      </div>
-      <p class="archive-feedback" id="archive-feedback-${tea.id}">先讀史料，再用歷史推論解鎖任務。</p>
-    </section>
-  `;
+  return `<p class="archive-teaser">鎖定考證：點擊卡片進入歷史檔案館，完成兩道推理題後解鎖配方。</p>`;
 }
 
 function renderTeaGrid() {
@@ -765,7 +972,7 @@ function renderTeaGrid() {
     const archive = archiveForTea(tea);
     return `
       <article class="tea-card ${unlocked ? "" : "is-locked"} ${archive ? "has-archive" : "starter-card"}">
-        <button class="tea-card-main" type="button" data-tea="${tea.id}" ${unlocked ? "" : "disabled"} aria-disabled="${unlocked ? "false" : "true"}">
+        <button class="tea-card-main" type="button" data-tea="${tea.id}" aria-disabled="${unlocked ? "false" : "true"}">
           <span class="tea-image sprite" style='${spriteStyle("tea", tea.sprite)}' role="img" aria-label="${tea.name}"></span>
           <span class="tea-card-content">
             <span class="era-chip">${tea.level} · ${tea.concept}</span>
@@ -773,7 +980,7 @@ function renderTeaGrid() {
             ${archive && unlocked ? `<span class="archive-chip">史料已解鎖</span>` : ""}
             <h3>${tea.name}</h3>
             <p>${tea.summary}</p>
-            <span class="start-chip">${unlocked ? "開始課堂任務" : "先完成歷史閱讀"}</span>
+            <span class="start-chip">${unlocked ? "開始課堂任務" : "鎖定考證：歷史檔案解鎖"}</span>
           </span>
         </button>
         ${renderArchiveUnlock(tea, record)}
@@ -781,6 +988,123 @@ function renderTeaGrid() {
     `;
   }).join("");
   renderPersonalRecord(record);
+}
+
+function renderArchiveQuestion(question, questionIndex) {
+  const inputType = question.type === "multi" ? "checkbox" : "radio";
+  return `
+    <section class="archive-question">
+      <span class="era-chip">${question.tag}</span>
+      <h4>${question.question}</h4>
+      <div class="archive-options">
+        ${question.options.map((option, optionIndex) => `
+          <label class="archive-option">
+            <input
+              type="${inputType}"
+              name="archive-q-${questionIndex}"
+              value="${optionIndex}"
+              data-question-index="${questionIndex}"
+            />
+            <span>${option}</span>
+          </label>
+        `).join("")}
+      </div>
+      <p class="archive-explain" id="archive-explain-${questionIndex}"></p>
+    </section>
+  `;
+}
+
+function openArchiveModal(teaId) {
+  const tea = teas.find((item) => item.id === teaId);
+  const archive = archiveUnlocks[teaId];
+  if (!tea || !archive || !archiveModalRoot) return;
+  archiveModalRoot.innerHTML = `
+    <div class="archive-modal-backdrop" role="presentation"></div>
+    <section class="archive-modal" role="dialog" aria-modal="true" aria-labelledby="archive-modal-title">
+      <div class="archive-modal-head">
+        <div>
+          <span class="era-chip">歷史檔案館</span>
+          <h3 id="archive-modal-title">${archive.label}</h3>
+          <p>精讀電子史料，完成歷史情境題與 STEAM 科學整合題，才可解鎖「${tea.name}」配方。</p>
+        </div>
+        <button class="icon-button archive-close" type="button" aria-label="關閉歷史檔案館">×</button>
+      </div>
+      <div class="archive-documents">
+        ${archive.documents.map((doc) => `
+          <article class="archive-document">
+            <h4>${doc.title}</h4>
+            <p>${doc.text}</p>
+          </article>
+        `).join("")}
+      </div>
+      <form class="archive-report" data-archive-report="${teaId}">
+        ${archive.questions.map((question, index) => renderArchiveQuestion(question, index)).join("")}
+        <p class="archive-feedback" id="archive-modal-feedback">請完成所有考證題，然後提交考證報告。</p>
+        <div class="button-row">
+          <button class="solid-button" type="submit">提交考證報告</button>
+          <button class="ghost-button archive-close" type="button">稍後再讀</button>
+        </div>
+      </form>
+    </section>
+  `;
+  document.body.classList.add("has-archive-modal");
+}
+
+function closeArchiveModal() {
+  archiveModalRoot && (archiveModalRoot.innerHTML = "");
+  document.body.classList.remove("has-archive-modal");
+}
+
+function selectedArchiveAnswers(questionIndex) {
+  return [...document.querySelectorAll(`[name="archive-q-${questionIndex}"]:checked`)]
+    .map((input) => Number(input.value))
+    .sort((a, b) => a - b);
+}
+
+function sameAnswers(selected, answers) {
+  const expected = [...answers].sort((a, b) => a - b);
+  return selected.length === expected.length && selected.every((value, index) => value === expected[index]);
+}
+
+function verifyArchiveReport(teaId) {
+  const archive = archiveUnlocks[teaId];
+  const tea = teas.find((item) => item.id === teaId);
+  if (!archive || !tea) return;
+
+  const results = archive.questions.map((question, index) => {
+    const selected = selectedArchiveAnswers(index);
+    const correct = sameAnswers(selected, question.answers);
+    const explain = $(`#archive-explain-${index}`);
+    if (explain) {
+      explain.textContent = `${correct ? "正確。" : "未完成或答案未準確。"}${question.explain}`;
+      explain.classList.toggle("is-correct", correct);
+      explain.classList.toggle("is-wrong", !correct);
+    }
+    return correct;
+  });
+
+  const feedback = $("#archive-modal-feedback");
+  if (!results.every(Boolean)) {
+    if (feedback) feedback.textContent = "考證未通過：請重新閱讀文獻，留意人物處境、社會背景與科學變數。";
+    coachLine.textContent = "先別急著煲茶。評審想看見你由史料推論問題，再用 STEAM 作出合理決策。";
+    return;
+  }
+
+  const record = loadRecord();
+  record.archives[teaId] = true;
+  saveRecord(record);
+  addInsight(`歷史檔案館：${archive.successText}`);
+  if (feedback) {
+    feedback.innerHTML = `
+      <b>${archive.successTitle}</b><br />
+      【解鎖回饋】${archive.successText}<br />
+      【遊戲道具解鎖】${archive.unlockEffect}<br />
+      【任務指引】${archive.taskHint}
+    `;
+  }
+  coachLine.textContent = `考證成功！${tea.name} 已解鎖。你已把歷史閱讀轉化成遊戲內的解難資源。`;
+  renderTeaGrid();
+  setTimeout(closeArchiveModal, 2200);
 }
 
 function renderGuide() {
@@ -861,42 +1185,12 @@ function verifySourceCard(cardIndex, answerIndex) {
   if (feedback) feedback.textContent = `${correct ? "判斷正確。" : "再想想史料重點。"}${card.explain}`;
 }
 
-function verifyArchiveUnlock(teaId, answerIndex) {
-  const archive = archiveUnlocks[teaId];
-  const tea = teas.find((item) => item.id === teaId);
-  if (!archive || !tea) return;
-
-  const correct = answerIndex === archive.answer;
-  const feedback = $(`#archive-feedback-${teaId}`);
-  document.querySelectorAll(`[data-archive-tea="${teaId}"]`).forEach((button) => {
-    const isAnswer = Number(button.dataset.archiveAnswer) === archive.answer;
-    const isSelected = Number(button.dataset.archiveAnswer) === answerIndex;
-    button.disabled = true;
-    button.classList.toggle("is-correct", isAnswer);
-    button.classList.toggle("is-wrong", isSelected && !correct);
-  });
-
-  if (correct) {
-    const record = loadRecord();
-    record.archives[teaId] = true;
-    saveRecord(record);
-    if (feedback) feedback.textContent = `解鎖成功。${archive.explain}`;
-    coachLine.textContent = `你已把「${archive.label}」轉化成研究線索，${tea.name} 任務已解鎖。`;
-    setTimeout(renderTeaGrid, 650);
-    return;
-  }
-
-  if (feedback) feedback.textContent = `未解鎖。提示：先找出史料中的人物、時代困難和社會需要。${archive.explain}`;
-  coachLine.textContent = "先不要急著配方，評審想看的是：你能否由史料讀出問題，再把問題轉化成設計。";
-}
-
 function selectTea(teaId) {
   activeTea = teas.find((tea) => tea.id === teaId);
   if (!activeTea) return;
   if (!isTeaUnlocked(activeTea)) {
-    coachLine.textContent = "這張任務卡仍未解鎖。請先閱讀茶單上的歷史檔案，答對推論題後再開始任務。";
-    renderTeaGrid();
-    location.hash = "tea-menu";
+    coachLine.textContent = "這張任務卡仍未解鎖。請進入歷史檔案館，完成考證報告後再開始任務。";
+    openArchiveModal(activeTea.id);
     return;
   }
   gathered = new Set();
@@ -927,6 +1221,7 @@ function selectTea(teaId) {
 function renderHistory() {
   const question = activeTea.historyQuestion;
   const dilemma = activeTea.dilemma;
+  const frame = socialProblemFrames[activeTea.id];
   $("#history-screen").innerHTML = `
     <div class="history-layout">
       <div class="history-visual-wrap">
@@ -941,6 +1236,14 @@ function renderHistory() {
         <span class="era-chip">${activeTea.level}任務 · ${activeTea.concept}</span>
         <h3>${activeTea.name}</h3>
         <p>${activeTea.story}</p>
+        ${frame ? `
+          <section class="research-chain" aria-label="閱讀到解難流程">
+            <span class="era-chip">本關研究鏈</span>
+            <p><b>讀史料：</b>${frame.reading}</p>
+            <p><b>推論問題：</b>${frame.problem}</p>
+            <p><b>STEAM 解難：</b>用配方實驗、數據觀察和創新方案回應問題。</p>
+          </section>
+        ` : ""}
         ${renderIntelPanel(activeTea)}
         <div class="learning-goals">
           ${activeTea.learningGoals.map((goal) => `<span>${goal}</span>`).join("")}
@@ -1606,10 +1909,11 @@ function renderResult() {
   const heatScienceBonus = activeTea.preferredHeat && heat === activeTea.preferredHeat ? 12 : containsIngredient("honeysuckle") && heat === "high" ? -18 : 0;
   const cultureBonus = (historyCorrect ? 8 : historyAnswered ? 3 : 0) + (dilemmaCorrect ? 8 : dilemmaAnswered ? 3 : 0);
   const intelBonus = intelUnlocked ? 8 : 0;
+  const archiveBonus = archiveForTea(activeTea) && loadRecord().archives?.[activeTea.id] ? 6 : 0;
   const hintPenalty = hintsUsed * difficulty().hintPenalty;
   const prepRatio = prepScore / (activeTea.ingredients.length * 20);
   const steamBonus = (labMetrics ? 10 : 0) + (innovation.product ? 8 : 0);
-  const rawTotal = gatherScore * 0.22 + prepRatio * 22 + 24 + heatBonus + heatScienceBonus + cultureBonus + intelBonus + steamBonus + difficulty().supportBonus - hintPenalty - waterPenalty - timePenalty;
+  const rawTotal = gatherScore * 0.22 + prepRatio * 22 + 24 + heatBonus + heatScienceBonus + cultureBonus + intelBonus + archiveBonus + steamBonus + difficulty().supportBonus - hintPenalty - waterPenalty - timePenalty;
   const total = Math.max(0, Math.min(100, Math.round(rawTotal * difficulty().scoreMultiplier)));
   addInsight(`創新方案：${optionById("product", innovation.product).name}配合${optionById("sensor", innovation.sensor).name}，以${optionById("audience", innovation.audience).name}為對象。`);
   const record = updateRecord(total);
@@ -1619,6 +1923,11 @@ function renderResult() {
     total >= 68 ? "歷史和 STEAM 元素都已建立，再把實驗數據、訪問或作品模型補強，就會更完整。" :
     "味道還未穩，但你已經知道涼茶不是普通茶葉，而是可以連結歷史、科學與創新設計的文化議題。";
   const badges = badgeForScore(total, record);
+  const frame = socialProblemFrames[activeTea.id] || {
+    reading: "香港涼茶歷史與非物質文化遺產資料",
+    problem: "如何把歷史閱讀轉化成社會解難和文化保育",
+    value: "責任感、同理心和文化認同"
+  };
   $("#result-screen").innerHTML = `
     <div class="result-layout">
       <div class="rating-panel">
@@ -1649,11 +1958,12 @@ function renderResult() {
           <p>${optionById("product", innovation.product).name}配合${optionById("sensor", innovation.sensor).name}，服務${optionById("audience", innovation.audience).name}，突出${optionById("value", innovation.value).name}。創新方案即時評分：${calculateInnovationScore()}。</p>
         </article>
         <article class="submission-summary">
-          <h3>評審提交摘要</h3>
-          <p><b>閱讀篇章：</b>香港涼茶由嶺南藥草飲、街頭涼茶舖到國家級非物質文化遺產，反映氣候、社區和傳承需要。</p>
-          <p><b>解決問題：</b>讓學生用遊戲理解涼茶不是普通飲品，而是可被閱讀、實驗、設計和保育的生活文化。</p>
-          <p><b>STEAM 元素：</b>科學分析苦味、pH、溫度與茶色；科技使用${optionById("sensor", innovation.sensor).name}；工程設計${optionById("product", innovation.product).name}；藝術呈現香港涼茶舖美感；數學用分數與指數比較成效。</p>
-          <p><b>價值觀與原創：</b>以${optionById("audience", innovation.audience).name}為對象，突出${optionById("value", innovation.value).name}，把史料閱讀、科學實驗和非遺保育放進同一個互動任務。</p>
+          <h3>參賽作品定位</h3>
+          <p><b>我們如何閱讀：</b>本關以「${frame.reading}」為閱讀基礎，學生先理解史料，再把文字轉化為遊戲線索。</p>
+          <p><b>我們推論的香港問題：</b>${frame.problem}。</p>
+          <p><b>我們如何用 STEAM 解決：</b>科學分析苦味、pH、溫度與茶色；科技使用${optionById("sensor", innovation.sensor).name}；工程設計${optionById("product", innovation.product).name}；藝術呈現香港涼茶舖美感；數學用分數與指數比較成效。</p>
+          <p><b>我們展現的價值觀：</b>${frame.value}，並以${optionById("audience", innovation.audience).name}為對象，突出${optionById("value", innovation.value).name}。</p>
+          <p><b>原創設計：</b>把「閱讀史料 → 推論問題 → 遊戲實驗 → 創新設計」放進同一個互動任務，讓閱讀成為破關和解難的關鍵。</p>
           <p><b>真實驗證：</b>可用溫度探針、pH 試紙或感測器、顏色辨識和濕度感測，把遊戲假設帶回校園實驗。</p>
         </article>
         <article>
@@ -1709,14 +2019,21 @@ function resetGame() {
 }
 
 teaGrid.addEventListener("click", (event) => {
-  const archiveButton = event.target.closest("[data-archive-answer]");
-  if (archiveButton) {
-    verifyArchiveUnlock(archiveButton.dataset.archiveTea, Number(archiveButton.dataset.archiveAnswer));
-    return;
-  }
-
   const card = event.target.closest("[data-tea]");
   if (card) selectTea(card.dataset.tea);
+});
+
+archiveModalRoot?.addEventListener("click", (event) => {
+  if (event.target.closest(".archive-close") || event.target.classList.contains("archive-modal-backdrop")) {
+    closeArchiveModal();
+  }
+});
+
+archiveModalRoot?.addEventListener("submit", (event) => {
+  const form = event.target.closest("[data-archive-report]");
+  if (!form) return;
+  event.preventDefault();
+  verifyArchiveReport(form.dataset.archiveReport);
 });
 
 timelinePanel.addEventListener("click", (event) => {
