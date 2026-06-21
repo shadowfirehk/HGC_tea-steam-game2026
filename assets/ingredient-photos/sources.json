@@ -1,0 +1,104 @@
+[
+  {
+    "id": "honeysuckle",
+    "localFile": "assets/ingredient-photos/honeysuckle.jpg",
+    "sourceFile": "Dried honeysuckle.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Dried_honeysuckle.jpg"
+  },
+  {
+    "id": "chrysanthemum",
+    "localFile": "assets/ingredient-photos/chrysanthemum.jpg",
+    "sourceFile": "Dried chrysanthemum flowers.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Dried_chrysanthemum_flowers.jpg"
+  },
+  {
+    "id": "kapok",
+    "localFile": "assets/ingredient-photos/kapok.jpg",
+    "sourceFile": "Bombax ceiba Flower in Lantau island, Hong Kong.JPG",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Bombax_ceiba_Flower_in_Lantau_island%2C_Hong_Kong.JPG"
+  },
+  {
+    "id": "pueraria",
+    "localFile": "assets/ingredient-photos/pueraria.jpg",
+    "sourceFile": "Microcos paniculata 3.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Microcos_paniculata_3.jpg"
+  },
+  {
+    "id": "sophora",
+    "localFile": "assets/ingredient-photos/sophora.jpg",
+    "sourceFile": "???????? ?????? ?????????.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:%3F%3F%3F%3F%3F%3F%3F%3F_%3F%3F%3F%3F%3F%3F_%3F%3F%3F%3F%3F%3F%3F%3F%3F.jpg"
+  },
+  {
+    "id": "herbBundle",
+    "localFile": "assets/ingredient-photos/herbBundle.jpg",
+    "sourceFile": "Chinese traditional medicine.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Chinese_traditional_medicine.jpg"
+  },
+  {
+    "id": "selfheal",
+    "localFile": "assets/ingredient-photos/selfheal.jpg",
+    "sourceFile": "HK Chinese Medicine ??? Prunella Vulgaris 1.JPG",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:HK_Chinese_Medicine_%3F%3F%3F_Prunella_Vulgaris_1.JPG"
+  },
+  {
+    "id": "jigucao",
+    "localFile": "assets/ingredient-photos/jigucao.jpg",
+    "sourceFile": "GD ?? Guangdong ?? Zhongshan ??? Dao Xiang Yuan ??? Hot Pot Restaurant food shop ??? September 2024 R12S 01.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:GD_%3F%3F_Guangdong_%3F%3F_Zhongshan_%3F%3F%3F_Dao_Xiang_Yuan_%3F%3F%3F_Hot_Pot_Restaurant_food_shop_%3F%3F%3F_September_2024_R12S_01.jpg"
+  },
+  {
+    "id": "hempseed",
+    "localFile": "assets/ingredient-photos/hempseed.jpg",
+    "sourceFile": "Hemp bunch-dried out -seeds close up PNr?0063.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Hemp_bunch-dried_out_-seeds_close_up_PNr%3F0063.jpg"
+  },
+  {
+    "id": "monkfruit",
+    "localFile": "assets/ingredient-photos/monkfruit.jpg",
+    "sourceFile": "Dried monk fruit (20240123).jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Dried_monk_fruit_(20240123).jpg"
+  },
+  {
+    "id": "mistletoe",
+    "localFile": "assets/ingredient-photos/mistletoe.jpg",
+    "sourceFile": "Taxillus tomentosus (5657747969).jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Taxillus_tomentosus_(5657747969).jpg"
+  },
+  {
+    "id": "sugarcane",
+    "localFile": "assets/ingredient-photos/sugarcane.jpg",
+    "sourceFile": "Sugarcane stalks.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Sugarcane_stalks.jpg"
+  },
+  {
+    "id": "imperatae",
+    "localFile": "assets/ingredient-photos/imperatae.jpg",
+    "sourceFile": "Chigaya -02.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Chigaya_-02.jpg"
+  },
+  {
+    "id": "licorice",
+    "localFile": "assets/ingredient-photos/licorice.jpg",
+    "sourceFile": "Licorice slices (20240123).jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Licorice_slices_(20240123).jpg"
+  },
+  {
+    "id": "rocksugar",
+    "localFile": "assets/ingredient-photos/rocksugar.jpg",
+    "sourceFile": "Single crystal yellow rock sugar.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Single_crystal_yellow_rock_sugar.jpg"
+  },
+  {
+    "id": "water",
+    "localFile": "assets/ingredient-photos/water.jpg",
+    "sourceFile": "Glass-of-water.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Glass-of-water.jpg"
+  },
+  {
+    "id": "pot",
+    "localFile": "assets/ingredient-photos/pot.jpg",
+    "sourceFile": "user-provided-copper-kettle-photo.png",
+    "sourcePage": "User provided image in Codex chat, 2026-06-21"
+  }
+]

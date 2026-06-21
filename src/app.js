@@ -1,18 +1,19 @@
 const ingredients = [
-  { id: "honeysuckle", name: "金銀花", sprite: 0, clue: "花開時一白一黃，常用於清熱解毒。", prep: "摘花去梗", tag: "清熱", lore: "金銀花提醒我們：涼茶不是茶葉，而是嶺南人把山野草木變成日常保健智慧。" },
+  { id: "honeysuckle", name: "金銀花", sprite: 0, clue: "中藥舖多見淡黃至灰綠的乾燥花蕾，細長微皺，帶微小絨毛。", prep: "後下輕煎", tag: "清熱", lore: "金銀花屬花葉類藥材，芳香成分與綠原酸怕久煮；宜後下或中火短煎，不應猛火長時間熬煮。" },
   { id: "chrysanthemum", name: "菊花", sprite: 1, clue: "花香清雅，常配入清熱明目的飲品。", prep: "輕洗花瓣", tag: "清潤", lore: "菊花茶從藥用走向日常，反映唐宋以後藥草湯逐漸進入家庭生活。" },
   { id: "kapok", name: "木棉花", sprite: 2, clue: "南方常見紅花，五花茶中用來祛濕。", prep: "曬乾花瓣", tag: "祛濕", lore: "木棉花盛放於潮濕季節，民間把它放入茶方，回應嶺南多雨濕熱的環境。" },
   { id: "pueraria", name: "布渣葉", sprite: 3, clue: "嶺南常用草木，可助消滯解暑。", prep: "剪碎葉片", tag: "消滯", lore: "相傳葛洪在羅浮山採集本地野草配方，這類在地藥草是涼茶原型的重要線索。" },
   { id: "sophora", name: "槐花", sprite: 4, clue: "五花之一，味道溫和，常與其他花材同煲。", prep: "分揀花蕾", tag: "溫和", lore: "多種花材互補，呈現唐宋以後按季節、症狀與體質調配複方的智慧。" },
   { id: "herbBundle", name: "廿四味藥材包", sprite: 5, clue: "不是剛好二十四種，而是多種苦味藥材的概數。", prep: "分層包紮", tag: "複方", lore: "廿四味代表多種藥材合方抗疫、對付發熱瘡毒與濕氣的民間記憶。" },
-  { id: "selfheal", name: "夏枯草", sprite: 6, clue: "名字帶有夏天意象，常見於清熱類涼茶。", prep: "揉開花穗", tag: "清熱", lore: "夏枯草對應暑濕熱病的生活經驗，是早期嶺南藥草湯的重要角色。" },
+  { id: "selfheal", name: "夏枯草", sprite: 6, clue: "藥用部位是乾燥果穗，像棕黑色迷你松果或枯乾麥穗。", prep: "揉開果穗", tag: "清熱", lore: "夏枯草不是葉片，而是層疊苞片組成的乾燥穗狀物；它會令茶湯顏色加深，常見於清熱類涼茶。" },
   { id: "jigucao", name: "雞骨草", sprite: 7, clue: "常用於疏肝祛濕，味道帶草本苦甘。", prep: "紮成小束", tag: "祛濕", lore: "雞骨草茶反映涼茶不只清熱，也處理濕重、疲倦和腸胃不適等南方生活問題。" },
   { id: "hempseed", name: "火麻仁", sprite: 8, clue: "口感較潤，常見於香港涼茶舖。", prep: "搗碎取香", tag: "滋潤", lore: "香港涼茶舖把藥飲變成街坊日常，溫和配方讓更多人願意入口。" },
   { id: "monkfruit", name: "羅漢果", sprite: 9, clue: "天然甘甜，常用來潤喉。", prep: "敲開果殼", tag: "潤喉", lore: "羅漢果令苦味茶方更易入口，也見證傳統涼茶向現代瓶裝飲品轉化。" },
   { id: "mistletoe", name: "桑寄生", sprite: 10, clue: "常見滋補茶材，適合慢火久煲。", prep: "慢洗去塵", tag: "調理", lore: "涼茶舖不只賣苦茶，也提供街坊按體質選擇的日常調理。" },
   { id: "sugarcane", name: "竹蔗", sprite: 11, clue: "清甜多汁，常與茅根同煲。", prep: "劈成小段", tag: "清甜", lore: "竹蔗茅根水是香港家庭記憶之一，味道清甜，連小朋友也容易接受。" },
   { id: "imperatae", name: "茅根", sprite: 12, clue: "白色根莖，常配竹蔗作清潤飲品。", prep: "洗淨泥沙", tag: "清潤", lore: "茅根一類草根藥材提醒玩家：涼茶是嶺南草木熬成的藥飲。" },
-  { id: "rocksugar", name: "冰糖", sprite: 13, clue: "調和苦味，讓藥飲更容易入口。", prep: "後段加入", tag: "調味", lore: "一點甜味背後也有人情：老茶舖讓清苦生活多一口安慰。" },
+  { id: "licorice", name: "甘草", sprite: 13, clue: "常切成圓形薄片，外皮紅棕，切面淡黃並有放射狀紋理。", prep: "薄片略洗", tag: "調和", lore: "甘草根帶天然甜味，可調和苦味；在圖鑑中要看見淡黃色切面與類似年輪的紋理。" },
+  { id: "rocksugar", name: "冰糖", sprite: 13, clue: "晶體透明，用來調和苦味，讓藥飲更容易入口。", prep: "後段加入", tag: "調味", lore: "一點甜味背後也有人情：老茶舖讓清苦生活多一口安慰。" },
   { id: "water", name: "清水", sprite: 14, clue: "所有藥草都要靠它慢慢煎出味道。", prep: "量好水位", tag: "火候", lore: "涼茶重視火候與水量，從家庭煲製到街頭銅壺，都是手藝的一部分。" },
   { id: "pot", name: "銅壺", sprite: 15, clue: "舊香港涼茶舖的標誌之一。", prep: "預熱銅壺", tag: "市井", lore: "五六十年代香港涼茶舖常見銅葫蘆招牌與大茶壺，是城市街景的一部分。" }
 ];
@@ -87,6 +88,13 @@ const teas = [
     concept: "因地制宜",
     summary: "溫和祛濕，適合認識民間如何按季節與環境調配草木。",
     scenario: "梅雨天，街坊小朋友覺得身重、無胃口，但又怕太苦。",
+    npc: { name: "阿晴", role: "梅雨天學生", symbol: "晴", type: "student" },
+    intel: {
+      title: "五嶺山洪濕熱記",
+      source: "「夏日山洪後，村童多覺身重不思食。金銀花質地輕浮，內含芳香之氣，切忌猛火久熬，否則藥效盡隨熱氣散失。宜中火平煎，微沸即收。」",
+      clues: ["症狀關鍵是濕熱與胃口差", "金銀花屬花葉類，忌猛火久熬", "中火平煎能保留清輕芳香"],
+      recipeHint: "情報推論：五花茶應用較多花材，水量充足，時間不宜過長；含金銀花時宜中火短煎或後下。"
+    },
     learningGoals: ["分辨五花茶的花材", "理解濕熱氣候如何影響飲食文化", "知道民間傳說如何保存地方經驗"],
     story: "相傳五嶺山下村落夏天山洪氾濫，濕熱病流行。一位老婆婆採路邊五種花卉熬水，村民飲後症狀減輕，後人便固定成五花茶。它藥性溫和，是最適合做入門教學的涼茶。",
     dilemma: {
@@ -104,6 +112,7 @@ const teas = [
     taste: "花香微甘",
     water: 1800,
     time: 25,
+    preferredHeat: "medium",
     ingredients: ["honeysuckle", "chrysanthemum", "kapok", "pueraria", "sophora"]
   },
   {
@@ -114,6 +123,13 @@ const teas = [
     concept: "複方抗疫",
     summary: "苦味最深的複方涼茶，適合理解勞工生活與民間抗疫記憶。",
     scenario: "碼頭工人長期暴曬搬貨，容易上火、生瘡，又沒有時間煲藥。",
+    npc: { name: "強叔", role: "1950年代碼頭苦力", symbol: "力", type: "worker" },
+    intel: {
+      title: "碼頭勞工與廿四味口述",
+      source: "「日曬搬貨，汗出如雨，背脊又生瘡。苦茶雖難入口，卻要藥材多些，先猛火滾起，再轉慢火熬深。」",
+      clues: ["職業線索是長時間暴曬與勞損", "症狀線索是上火、生瘡、濕熱", "複方要濃，火候先急後緩"],
+      recipeHint: "情報推論：廿四味藥材比例較重、時間較長，初段可猛火，之後以慢火穩定濃縮。"
+    },
     learningGoals: ["理解「廿四」是概數", "連結涼茶與底層勞工生活", "思考苦味、療效與文化記憶的關係"],
     story: "相傳嶺南鄉下爆發嚴重時疫，多位鄉村大夫各自拿出祖傳藥方，把治療發熱、瘡毒、風寒、濕氣的草藥融合。早年香港碼頭工人勞損嚴重，身上容易生瘡，最常飲用廿四味。民間有句話：「廿四味，食得苦，先得福」。",
     dilemma: {
@@ -131,6 +147,7 @@ const teas = [
     taste: "極苦回甘",
     water: 2200,
     time: 45,
+    preferredHeat: "low",
     ingredients: ["herbBundle", "selfheal", "jigucao", "rocksugar"]
   },
   {
@@ -141,6 +158,13 @@ const teas = [
     concept: "傳統與科學",
     summary: "香港近代故事：本土植物研究與傳統涼茶相遇。",
     scenario: "有學生喉嚨發炎，想知道傳統涼茶是否也能和現代研究對話。",
+    npc: { name: "俊彥", role: "科學學會學生", symbol: "研", type: "researcher" },
+    intel: {
+      title: "胡秀英教授本土植物札記",
+      source: "「救必應曾救幼年病危，後以香港本土植物再作整理。咽喉風熱，不求味濃，只求清喉與可觀察。」",
+      clues: ["重點是傳統經驗與現代植物研究", "對象是咽喉發炎與風熱", "數據觀察比神化藥效更重要"],
+      recipeHint: "情報推論：三冬茶宜中等水量與時間，火力保持穩定，方便比較溫度、pH 和茶色。"
+    },
     learningGoals: ["認識胡秀英教授與本土植物研究", "理解傳統知識可以被重新整理", "分辨故事、經驗與科學研究的關係"],
     story: "植物學家胡秀英教授幼年身患重病，鄉間醫生用救必應把她救活。長大後她在香港研究本土植物，挑選崗梅、救必應、苦丁茶三種冬青植物，研製三冬茶，用於咽喉發炎與風熱感冒，是現代科學結合傳統涼茶的代表故事。",
     dilemma: {
@@ -158,7 +182,8 @@ const teas = [
     taste: "甘苦清喉",
     water: 1700,
     time: 30,
-    ingredients: ["selfheal", "jigucao", "monkfruit"]
+    preferredHeat: "medium",
+    ingredients: ["honeysuckle", "selfheal", "licorice"]
   },
   {
     id: "jigucao-tea",
@@ -168,6 +193,13 @@ const teas = [
     concept: "濕熱與飲食",
     summary: "疏肝祛濕，適合呈現嶺南濕熱與飲食習慣。",
     scenario: "一位街坊連吃火鍋和炸物後覺得口乾、疲倦、腸胃不適。",
+    npc: { name: "美姨", role: "火鍋後街坊", symbol: "濕", type: "neighbor" },
+    intel: {
+      title: "濕熱飲食觀察簿",
+      source: "「連日火鍋油炸，口乾而倦，胃中不舒。此非越苦越佳，須看體質，以祛濕消滯為先。」",
+      clues: ["症狀來自飲食燥熱與濕重", "不是越苦越好，要辨證", "雞骨草與祛濕消滯較貼合情境"],
+      recipeHint: "情報推論：雞骨草茶應保持祛濕濃度，但避免過高火力造成苦味過重。"
+    },
     learningGoals: ["連結氣候、飲食與身體感受", "認識雞骨草的文化定位", "理解涼茶要看體質，不宜亂飲"],
     story: "香港與廣東常年高溫多雨，濕氣重，加上火鍋、油炸食物容易令人上火。雞骨草茶反映涼茶不只是治病，也是一種面對濕熱、疲倦和腸胃不適的日常調理。",
     dilemma: {
@@ -185,6 +217,7 @@ const teas = [
     taste: "草本甘苦",
     water: 1800,
     time: 35,
+    preferredHeat: "low",
     ingredients: ["jigucao", "selfheal", "rocksugar"]
   },
   {
@@ -195,6 +228,13 @@ const teas = [
     concept: "日常化",
     summary: "清甜易飲，常見於家庭與街坊涼茶舖。",
     scenario: "家中長輩想煲一款小朋友也願意喝的清潤飲品。",
+    npc: { name: "婆婆", role: "家庭煲茶長輩", symbol: "家", type: "elder" },
+    intel: {
+      title: "家庭清潤煲製便條",
+      source: "「小兒怕苦，宜竹蔗茅根，清甜而潤。水要足，火不可躁，待根蔗之味慢慢出。」",
+      clues: ["對象是小朋友與家庭", "味道要清甜易入口", "水量足、慢火煲，避免過苦"],
+      recipeHint: "情報推論：竹蔗茅根水量應較充足，時間中等，重點是清甜清潤而非濃苦。"
+    },
     learningGoals: ["知道涼茶也有溫和清甜的一面", "理解藥飲如何進入家庭日常", "比較街舖與家庭煲製的文化角色"],
     story: "竹蔗茅根水讓小朋友也較容易接受，提醒我們涼茶不一定全都極苦。從家庭煲製到涼茶舖售賣，這類清潤配方把中醫智慧帶入日常生活。",
     dilemma: {
@@ -212,6 +252,7 @@ const teas = [
     taste: "清甜潤喉",
     water: 2000,
     time: 30,
+    preferredHeat: "low",
     ingredients: ["sugarcane", "imperatae", "rocksugar"]
   },
   {
@@ -222,6 +263,13 @@ const teas = [
     concept: "市井互助",
     summary: "把銅壺、勞工、免費淡茶與市井人情放進一碗茶。",
     scenario: "夜晚收檔前，有流浪漢和病童來到涼茶舖門口。",
+    npc: { name: "華叔", role: "舊香港涼茶師傅", symbol: "舖", type: "master" },
+    intel: {
+      title: "舊香港收檔人情錄",
+      source: "「貧童無錢看病，收檔前仍留淡茶一碗。銅壺不只盛藥，也盛街坊消息。若遇制水年月，更要惜水儲水。」",
+      clues: ["涼茶舖有社區互助功能", "淡茶照顧弱勢，不只追求濃苦", "1963 制水提醒玩家考慮水資源與工程儲備"],
+      recipeHint: "情報推論：舊香港街坊涼茶要兼顧人情與資源，水量較省，火候要穩，並思考儲水過濾方案。"
+    },
     learningGoals: ["理解涼茶舖的社會功能", "認識「寡佬茶」與勞工生活", "思考文化遺產中的人情與公共性"],
     story: "四五十年代香港貧窮，很多人看不起病。涼茶師傅有時會讓生病的孩子免費喝一碗淡涼茶，收攤時路邊流浪漢也能喝到殘餘藥湯。涼茶不止是飲品，也曾是底層窮人的廉價醫藥與街坊溫情。",
     dilemma: {
@@ -239,7 +287,8 @@ const teas = [
     taste: "苦中帶暖",
     water: 1600,
     time: 28,
-    ingredients: ["pot", "herbBundle", "rocksugar", "water"]
+    preferredHeat: "low",
+    ingredients: ["pot", "herbBundle", "licorice", "water"]
   }
 ];
 
@@ -358,6 +407,7 @@ let lab = { water: 1800, time: 25, heat: 55, ratio: 100 };
 let labMetrics = null;
 let innovation = { product: "smart-pot", sensor: "temp-ph", audience: "junior", value: "responsibility" };
 let currentDifficulty = "normal";
+let intelUnlocked = false;
 
 function difficulty() {
   return difficultyModes[currentDifficulty] || difficultyModes.normal;
@@ -377,6 +427,59 @@ function spriteStyle(type, index) {
 
 function ingredientById(id) {
   return ingredients.find((item) => item.id === id);
+}
+
+function containsIngredient(id) {
+  return activeTea?.ingredients?.includes(id);
+}
+
+function heatTargetLabel(tea = activeTea) {
+  if (!tea?.preferredHeat) return "按史料判斷";
+  if (tea.preferredHeat === "medium") return "中火平煎";
+  if (tea.preferredHeat === "low") return "文火慢煎";
+  if (tea.preferredHeat === "high") return "武火急煎";
+  return "按史料判斷";
+}
+
+function ingredientSpecimen(item) {
+  const details = {
+    honeysuckle: ["淡黃至灰綠", "細長乾燥花蕾", "微皺、有細絨毛"],
+    selfheal: ["深棕至紫黑", "乾燥果穗", "像迷你松果或枯麥穗"],
+    licorice: ["紅棕外皮", "淡黃切面", "圓片有放射狀紋理"],
+  };
+  return details[item.id] || [item.tag, item.prep, item.clue];
+}
+
+function cookHint(kind) {
+  const mode = currentDifficulty;
+  const targetHeat = heatTargetLabel();
+  const hasFlower = containsIngredient("honeysuckle");
+  const exactWater = `${activeTea.water} ml`;
+  const exactTime = `${activeTea.time} 分鐘`;
+
+  const hints = {
+    water: {
+      novice: `新手提示：把水量調到 ${exactWater}。水太少會太苦，水太多會變淡。`,
+      normal: intelUnlocked ? `課堂提示：史料已解鎖目標水量 ${exactWater}，你要控制濃度接近配方。` : "課堂提示：先從 NPC 情報推敲水量；濕熱、複方或清潤配方用水不同。",
+      expert: "高手提示：不直接顯示安全答案。請根據藥材多少、茶色深度和濃度風險判斷水量。"
+    },
+    heat: {
+      novice: `新手提示：本關目標火候是「${targetHeat}」。${hasFlower ? "金銀花忌猛火久熬，宜中火微沸或後下。" : "留意水面氣泡大小和蒸氣量。"}`,
+      normal: intelUnlocked ? `課堂提示：${activeTea.intel.recipeHint} 目標火候：${targetHeat}。` : "課堂提示：史料會提示火候方向；花葉類、根莖類和複方不一定同火候。",
+      expert: hasFlower ? "高手提示：花葉類重在保留芳香與活性成分，看到大量蒸氣時要警覺。" : "高手提示：只看沸騰狀態判斷；大泡、微沸、小泡代表不同萃取節奏。"
+    },
+    time: {
+      novice: `新手提示：煲到接近 ${exactTime} 就可以完成出爐。`,
+      normal: intelUnlocked ? `課堂提示：目標時間 ${exactTime}，接近即可；時間過長會增加苦味和茶色深度。` : "課堂提示：閱讀情報後會解鎖時間；先留意藥材質地和茶色變化。",
+      expert: "高手提示：不直接給時間答案。觀察茶色、氣泡和配方性質，過煲會提高苦味並損失部分成分。"
+    }
+  };
+
+  return hints[kind]?.[mode] || hints[kind]?.normal || "";
+}
+
+function renderModeHint(kind) {
+  return `<p class="mode-hint mode-${currentDifficulty}">${cookHint(kind)}</p>`;
 }
 
 function optionById(group, id) {
@@ -536,11 +639,16 @@ function renderPersonalRecord(record = loadRecord()) {
   `;
 }
 
-function setStage(name, title, label) {
+function setStage(name, title, label, options = {}) {
   document.querySelectorAll(".stage").forEach((stage) => stage.classList.remove("active-stage"));
   $(`#${name}-screen`).classList.add("active-stage");
   stageTitle.textContent = title;
   stageLabel.textContent = label;
+  if (options.scroll !== false) {
+    requestAnimationFrame(() => {
+      $("#game-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
 }
 
 function renderDifficultySelector() {
@@ -569,6 +677,7 @@ function renderTeaGrid() {
         ${record.completed[tea.id] ? `<span class="complete-chip">已完成${record.bestScores[tea.id] ? ` · ${record.bestScores[tea.id]}分` : ""}</span>` : ""}
         <h3>${tea.name}</h3>
         <p>${tea.summary}</p>
+        <span class="start-chip">點擊開始任務</span>
       </span>
     </button>
   `).join("");
@@ -578,13 +687,30 @@ function renderTeaGrid() {
 function renderGuide() {
   guide.innerHTML = ingredients.map((item) => `
     <article class="ingredient-card guide-card">
-      <span class="ingredient-image sprite" style='${spriteStyle("ingredient", item.sprite)}' role="img" aria-label="${item.name}"></span>
+      ${renderIngredientPhoto(item)}
       <span class="tag-pill">${item.tag}</span>
       <strong>${item.name}</strong>
       <p>${item.clue}</p>
+      <ul class="specimen-notes">${ingredientSpecimen(item).map((note) => `<li>${note}</li>`).join("")}</ul>
       <small>${item.lore}</small>
     </article>
   `).join("");
+}
+
+function renderIngredientPhoto(item) {
+  return `
+    <span class="ingredient-image ingredient-photo" role="img" aria-label="${item.name}真實圖片">
+      <img src="./assets/ingredient-photos/${item.id}.jpg" alt="${item.name}" loading="lazy" />
+    </span>
+  `;
+}
+
+function renderSpecimenImage(item) {
+  return `
+    <span class="ingredient-image specimen-image specimen-${item.id}" role="img" aria-label="${item.name}藥材外觀">
+      <i></i><i></i><i></i><i></i>
+    </span>
+  `;
 }
 
 function renderTimeline() {
@@ -655,11 +781,12 @@ function selectTea(teaId) {
   lab = { water: activeTea.water, time: activeTea.time, heat: 55, ratio: 100 };
   labMetrics = calculateLabMetrics();
   innovation = { product: "smart-pot", sensor: "temp-ph", audience: "junior", value: "responsibility" };
+  intelUnlocked = false;
   stopNeedle();
   stopCooking();
   coachLine.textContent = `今日你是涼茶舖小師傅。任務是煲好「${activeTea.name}」，再把歷史變成 STEAM 創新方案。`;
   renderHistory();
-  location.hash = "game-panel";
+  history.replaceState(null, "", "#game-panel");
 }
 
 function renderHistory() {
@@ -669,6 +796,7 @@ function renderHistory() {
     <div class="history-layout">
       <div class="history-visual-wrap">
         <div class="history-visual sprite" style='${spriteStyle("tea", activeTea.sprite)}' role="img" aria-label="${activeTea.name}"></div>
+        ${renderNpcCard(activeTea)}
         <div class="mission-card">
           <span class="era-chip">街坊個案</span>
           <p>${activeTea.scenario}</p>
@@ -678,14 +806,11 @@ function renderHistory() {
         <span class="era-chip">${activeTea.level}任務 · ${activeTea.concept}</span>
         <h3>${activeTea.name}</h3>
         <p>${activeTea.story}</p>
+        ${renderIntelPanel(activeTea)}
         <div class="learning-goals">
           ${activeTea.learningGoals.map((goal) => `<span>${goal}</span>`).join("")}
         </div>
-        <div class="fact-strip" aria-label="煲製資料">
-          <div><span>建議水量</span><strong>${activeTea.water} ml</strong></div>
-          <div><span>煲製時間</span><strong>${activeTea.time} 分鐘</strong></div>
-          <div><span>味道記憶</span><strong>${activeTea.taste}</strong></div>
-        </div>
+        <div id="fact-strip-wrap">${renderFactStrip()}</div>
         <section class="history-quiz" aria-live="polite">
           <h4>${dilemma.question}</h4>
           <div class="choice-row">
@@ -705,6 +830,7 @@ function renderHistory() {
     </div>
   `;
   $("#start-gather").addEventListener("click", renderGather);
+  $("#unlock-intel")?.addEventListener("click", unlockIntel);
   document.querySelectorAll("[data-history-answer]").forEach((button) => {
     button.addEventListener("click", () => verifyHistory(Number(button.dataset.historyAnswer)));
   });
@@ -712,6 +838,59 @@ function renderHistory() {
     button.addEventListener("click", () => verifyDilemma(Number(button.dataset.dilemmaAnswer)));
   });
   setStage("history", activeTea.name, "第一關：理解情境");
+}
+
+function renderNpcCard(tea) {
+  return `
+    <article class="npc-card npc-${tea.npc.type}" aria-label="NPC 角色">
+      <div class="npc-logo" aria-hidden="true">${tea.npc.symbol}</div>
+      <div>
+        <span class="era-chip">NPC 來店</span>
+        <h4>${tea.npc.name}</h4>
+        <p>${tea.npc.role}</p>
+      </div>
+    </article>
+  `;
+}
+
+function renderIntelPanel(tea) {
+  return `
+    <section class="intel-card ${intelUnlocked ? "is-unlocked" : ""}" aria-label="歷史情報">
+      <div class="intel-head">
+        <span class="era-chip">史料情報</span>
+        <strong id="intel-status">${intelUnlocked ? "已整理成破關線索" : "閱讀後可解鎖配方與火候"}</strong>
+      </div>
+      <h4>${tea.intel.title}</h4>
+      <p class="source-text">${tea.intel.source}</p>
+      <ul>
+        ${tea.intel.clues.map((clue) => `<li>${clue}</li>`).join("")}
+      </ul>
+      <p class="recipe-hint">${tea.intel.recipeHint}</p>
+      <button class="solid-button" type="button" id="unlock-intel" ${intelUnlocked ? "disabled" : ""}>整理情報線索</button>
+    </section>
+  `;
+}
+
+function renderFactStrip() {
+  return `
+    <div class="fact-strip ${intelUnlocked ? "" : "is-locked"}" aria-label="煲製資料">
+      <div><span>建議水量</span><strong>${intelUnlocked ? `${activeTea.water} ml` : "閱讀情報後解鎖"}</strong></div>
+      <div><span>煲製時間</span><strong>${intelUnlocked ? `${activeTea.time} 分鐘` : "閱讀情報後解鎖"}</strong></div>
+      <div><span>味道記憶</span><strong>${intelUnlocked ? activeTea.taste : "從 NPC 線索推敲"}</strong></div>
+    </div>
+  `;
+}
+
+function unlockIntel() {
+  if (intelUnlocked || !activeTea) return;
+  intelUnlocked = true;
+  hintsUsed = Math.max(0, hintsUsed - 1);
+  addInsight(`史料情報：${activeTea.intel.recipeHint}`);
+  $("#intel-status") && ($("#intel-status").textContent = "已整理成破關線索");
+  $(".intel-card")?.classList.add("is-unlocked");
+  $("#unlock-intel") && ($("#unlock-intel").disabled = true);
+  $("#fact-strip-wrap") && ($("#fact-strip-wrap").innerHTML = renderFactStrip());
+  coachLine.textContent = "情報整理完成。讀懂史料，就等於拿到配方、火候和服務對象的破關提示。";
 }
 
 function markChoiceButtons(selector, answerIndex, selectedIndex, correct) {
@@ -777,7 +956,7 @@ function renderGather() {
             <div class="quiz-choice-grid">
               ${choices.map((item) => `
                 <button class="ingredient-card quiz-choice" type="button" data-answer="${item.id}">
-                  <span class="ingredient-image sprite" style='${spriteStyle("ingredient", item.sprite)}' role="img" aria-label="${item.name}"></span>
+                  ${renderIngredientPhoto(item)}
                   <span class="tag-pill">${item.tag}</span>
                   <strong>${item.name}</strong>
                 </button>
@@ -810,7 +989,7 @@ function renderGather() {
   document.querySelectorAll("[data-answer]").forEach((button) => {
     button.addEventListener("click", () => verifyIngredient(button.dataset.answer));
   });
-  setStage("gather", "採藥問答", "第二關：辨認藥材");
+  setStage("gather", "採藥問答", "第二關：辨認藥材", { scroll: gathered.size === 0 && wrongPicks === 0 });
 }
 
 function verifyIngredient(answerId) {
@@ -842,7 +1021,7 @@ function renderPrepStep() {
   $("#prep-screen").innerHTML = `
     <div class="prep-board">
       <div class="prep-target">
-        <span class="ingredient-image sprite" style='${spriteStyle("ingredient", item.sprite)}' role="img" aria-label="${item.name}"></span>
+        ${renderIngredientPhoto(item)}
         <span class="tag-pill">${item.tag}</span>
         <h3>${item.name}</h3>
         <p>${item.prep}</p>
@@ -909,7 +1088,12 @@ function renderCook() {
           <span class="pot-lid"></span>
           <span class="pot-knob"></span>
           <span class="pot-rim"></span>
-          <span class="pot-belly"></span>
+          <span class="pot-belly">
+            <span class="tea-liquid"></span>
+            <span class="bubble bubble-one"></span>
+            <span class="bubble bubble-two"></span>
+            <span class="bubble bubble-three"></span>
+          </span>
           <span class="pot-handle left"></span>
           <span class="pot-handle right"></span>
           <span class="pot-foot"></span>
@@ -919,7 +1103,8 @@ function renderCook() {
       <div class="cook-controls">
         <div class="control-group">
           <h3>水量控制</h3>
-          <p>目標：${activeTea.water} ml，目前 <strong id="water-value">${water}</strong> ml。</p>
+          ${renderModeHint("water")}
+          <p>目前 <strong id="water-value">${water}</strong> ml。</p>
           <div class="meter-line"><span id="water-fill" class="meter-fill"></span></div>
           <div class="button-row">
             <button class="mini-button" type="button" data-water="100">加 100 ml</button>
@@ -929,16 +1114,19 @@ function renderCook() {
         </div>
         <div class="control-group">
           <h3>火候選擇</h3>
-          <p>慢火能保留草本味，現在是 <strong id="heat-value">${heatLabel()}</strong>。</p>
+          ${renderModeHint("heat")}
+          <p>現在是 <strong id="heat-value">${heatLabel()}</strong>。</p>
           <div class="button-row">
-            <button class="mini-button" type="button" data-heat="high">猛火</button>
-            <button class="mini-button" type="button" data-heat="low">慢火</button>
+            <button class="mini-button" type="button" data-heat="high">猛火 100°C</button>
+            <button class="mini-button" type="button" data-heat="medium">中火 80°C</button>
+            <button class="mini-button" type="button" data-heat="low">文火 65°C</button>
             <button class="mini-button" type="button" data-heat="off">熄火</button>
           </div>
         </div>
         <div class="control-group">
           <h3>煲製時間</h3>
-          <p>目標：${activeTea.time} 分鐘，目前 <strong id="time-value">${cookTime}</strong> 分鐘。</p>
+          ${renderModeHint("time")}
+          <p>目前 <strong id="time-value">${cookTime}</strong> 分鐘。</p>
           <div class="meter-line"><span id="time-fill" class="meter-fill"></span></div>
           <div class="button-row">
             <button class="solid-button" type="button" id="start-cook">開始煲</button>
@@ -958,8 +1146,11 @@ function renderCook() {
     button.addEventListener("click", () => {
       heat = button.dataset.heat;
       coachLine.textContent =
-        heat === "low" ? "慢火最像傳統煲製，讓藥草慢慢出味。" :
-        heat === "high" ? "猛火快，但容易把味道煲得粗暴。" :
+        heat === "medium" && containsIngredient("honeysuckle") ? "中火平煎正確。金銀花質地輕浮，微沸即可，能保留芳香成分。" :
+        heat === "high" && containsIngredient("honeysuckle") ? "溫度過高。金銀花的揮發性有效成分會隨大量蒸氣流失，綠原酸也可能因久熱而降解。" :
+        heat === "low" ? "文火適合久煲根莖或複方，水面只有細小氣泡。" :
+        heat === "medium" ? "中火保持微沸，適合需要溫和釋放的花葉類藥材。" :
+        heat === "high" ? "猛火會劇烈翻滾，適合短時間煮沸，不宜長時間強煎。" :
         "先熄火觀察，別忘記時間仍是分數關鍵。";
       updateCookUi();
     });
@@ -972,6 +1163,7 @@ function renderCook() {
 
 function heatLabel() {
   if (heat === "high") return "猛火";
+  if (heat === "medium") return "中火";
   if (heat === "low") return "慢火";
   return "未開火";
 }
@@ -983,7 +1175,7 @@ function startCooking() {
     return;
   }
   cookTimer = setInterval(() => {
-    cookTime += heat === "high" ? difficulty().cookHighStep : difficulty().cookLowStep;
+    cookTime += heat === "high" ? difficulty().cookHighStep : heat === "medium" ? 3 : difficulty().cookLowStep;
     updateCookUi();
   }, 650);
 }
@@ -1001,6 +1193,17 @@ function updateCookUi() {
   $("#time-fill")?.style.setProperty("--fill", `${Math.min(100, (cookTime / activeTea.time) * 100)}%`);
   $(".pot-visual")?.style.setProperty("--steam-opacity", heat === "off" ? 0.08 : heat === "high" ? 0.88 : 0.58);
   $(".pot-visual")?.classList.toggle("is-cooking", heat !== "off");
+  $(".pot-visual")?.classList.toggle("heat-high", heat === "high");
+  $(".pot-visual")?.classList.toggle("heat-medium", heat === "medium");
+  $(".pot-visual")?.classList.toggle("heat-low", heat === "low");
+  $(".pot-visual")?.style.setProperty("--brew-depth", `${labMetrics?.color || teaColorEstimate()}%`);
+}
+
+function teaColorEstimate() {
+  const darkFromSelfheal = containsIngredient("selfheal") ? 34 : 0;
+  const yellowFromHoneysuckle = containsIngredient("honeysuckle") ? 12 : 0;
+  const base = activeTea?.id === "twenty-four" ? 70 : activeTea?.id === "three-winter" ? 62 : 42;
+  return Math.min(94, base + darkFromSelfheal + yellowFromHoneysuckle);
 }
 
 function calculateLabMetrics() {
@@ -1008,12 +1211,19 @@ function calculateLabMetrics() {
   const concentration = Math.max(0.45, Math.min(1.9, (activeTea.water / lab.water) * ratio));
   const heatFactor = lab.heat / 55;
   const timeFactor = lab.time / activeTea.time;
+  const flowerPenalty = containsIngredient("honeysuckle") && lab.heat > 85 ? 16 : 0;
   const bitterness = Math.round(Math.min(100, 22 + concentration * 30 + timeFactor * 18 + (activeTea.id === "twenty-four" ? 22 : 0)));
   const temperature = Math.round(55 + lab.heat * 0.55 + Math.min(18, lab.time * 0.28));
   const ph = Math.max(5.2, Math.min(7.4, 7.2 - concentration * 0.55 - timeFactor * 0.22 + (lab.water > activeTea.water ? 0.18 : 0)));
-  const color = Math.round(Math.min(100, 18 + concentration * 34 + timeFactor * 24 + heatFactor * 12));
-  const dampHeat = Math.round(Math.min(100, concentration * 38 + timeFactor * 28 + (lab.heat < 75 ? 18 : 8) + (lab.water >= activeTea.water * 0.85 ? 10 : 0)));
-  return { bitterness, temperature, ph: ph.toFixed(1), color, dampHeat, concentration: concentration.toFixed(2) };
+  const selfhealDark = containsIngredient("selfheal") ? 24 : 0;
+  const honeysuckleYellow = containsIngredient("honeysuckle") ? 8 : 0;
+  const color = Math.round(Math.min(100, 18 + concentration * 28 + timeFactor * 18 + heatFactor * 8 + selfhealDark + honeysuckleYellow));
+  const heatSuitability =
+    activeTea.preferredHeat === "medium" ? Math.max(0, 22 - Math.abs(lab.heat - 80) * 0.8) :
+    activeTea.preferredHeat === "low" ? Math.max(0, 22 - Math.abs(lab.heat - 65) * 0.7) :
+    Math.max(0, 18 - Math.abs(lab.heat - 95) * 0.5);
+  const dampHeat = Math.round(Math.min(100, concentration * 34 + timeFactor * 22 + heatSuitability + (lab.water >= activeTea.water * 0.85 ? 10 : 0) - flowerPenalty));
+  return { bitterness, temperature, ph: ph.toFixed(1), color, dampHeat, concentration: concentration.toFixed(2), flowerPenalty };
 }
 
 function renderLab() {
@@ -1029,6 +1239,7 @@ function renderLab() {
         ${renderSlider("time", "煲製時間", lab.time, 10, 60, 1, "分鐘")}
         ${renderSlider("heat", "火力", lab.heat, 30, 100, 5, "%")}
         ${renderSlider("ratio", "藥材比例", lab.ratio, 60, 150, 5, "%")}
+        ${renderFormulaNote()}
         <div class="button-row">
           <button class="solid-button" type="button" id="record-lab">記錄實驗結果</button>
           <button class="ghost-button" type="button" id="go-innovation">進入創新方案</button>
@@ -1049,15 +1260,20 @@ function renderLab() {
           <p>以模擬方式呈現酸鹼度隨濃度變化。</p>
         </div>
         <div class="tea-color-sample" style="--tea-depth:${labMetrics.color}%">
-          <span>茶色樣本</span>
+          <span>${renderTeaAppearance()}</span>
+        </div>
+        <div class="serving-vessel" style="--tea-depth:${labMetrics.color}%">
+          <span class="porcelain-bowl" aria-hidden="true"><i></i></span>
+          <p>1894 年街頭涼茶宜用厚底瓷碗、帶蓋瓷盅或由銅葫蘆倒出；茶湯多為深褐至黑棕，帶微渾濁與少量藥渣。</p>
         </div>
         <section class="principle-card">
           <h3>STEAM 原理說明</h3>
           <ul>
             <li><b>苦味值：</b>藥材比例越高、水量越少、時間越長，濃度上升，苦味值提高。</li>
             <li><b>pH：</b>以模擬方式表示濃度與煲製時間對酸鹼度的影響，數值越低代表越偏酸。</li>
-            <li><b>顏色：</b>茶色受藥材濃度、煲製時間和火力影響；時間越長通常越深。</li>
-            <li><b>濕熱應對指數：</b>綜合濃度、時間、慢火表現和水量是否足夠，用來討論配方是否能回應嶺南濕熱環境。</li>
+            <li><b>顏色：</b>夏枯草會令茶湯偏深褐至黑棕；金銀花比例高時茶色較偏黃綠，但傳統涼茶通常仍帶渾濁與藥渣感。</li>
+            <li><b>火候：</b>金銀花等花葉類藥材忌猛火久熬；中火微沸或後下能減少揮發性成分流失。</li>
+            <li><b>濕熱應對指數：</b>綜合濃度、時間、火候是否符合藥材特性和水量是否足夠，用來討論配方是否能回應嶺南濕熱環境。</li>
           </ul>
         </section>
       </section>
@@ -1075,6 +1291,21 @@ function renderLab() {
   });
   $("#go-innovation").addEventListener("click", renderInnovation);
   setStage("lab", "涼茶科學實驗室", "第五關：STEAM 數據探究");
+}
+
+function renderFormulaNote() {
+  const notes = [];
+  if (containsIngredient("honeysuckle")) notes.push("金銀花：花葉類，宜中火微沸或後下，忌猛火久熬。");
+  if (containsIngredient("selfheal")) notes.push("夏枯草：乾燥果穗令茶色加深，常呈深褐至黑棕。");
+  if (containsIngredient("licorice")) notes.push("甘草：根片帶天然甜味，可調和苦味。");
+  if (!notes.length) return "";
+  return `<section class="formula-note"><h4>藥材藥理提示</h4>${notes.map((note) => `<p>${note}</p>`).join("")}</section>`;
+}
+
+function renderTeaAppearance() {
+  if (containsIngredient("selfheal")) return "深褐至黑棕 · 微渾濁";
+  if (containsIngredient("honeysuckle")) return "黃綠至褐色 · 微渾濁";
+  return "褐色茶湯 · 微量藥渣";
 }
 
 function renderSlider(id, label, value, min, max, step, unit) {
@@ -1215,6 +1446,7 @@ function renderOptionGroup(group, title) {
 
 function badgeForScore(total, record = loadRecord()) {
   const badges = [];
+  if (intelUnlocked) badges.push("史料情報徽章");
   if (historyCorrect && dilemmaCorrect) badges.push("歷史辨證徽章");
   if (wrongPicks === 0) badges.push("採藥神眼徽章");
   if (heat === "low") badges.push("慢火師傅徽章");
@@ -1231,12 +1463,14 @@ function renderResult() {
   stopCooking();
   const waterPenalty = Math.min(35, Math.round(Math.abs(water - activeTea.water) / 60));
   const timePenalty = Math.min(35, Math.round(Math.abs(cookTime - activeTea.time) * 1.4));
-  const heatBonus = heat === "low" || heat === "off" ? 12 : 0;
+  const heatBonus = activeTea.preferredHeat ? 0 : heat === "low" || heat === "off" ? 12 : 0;
+  const heatScienceBonus = activeTea.preferredHeat && heat === activeTea.preferredHeat ? 12 : containsIngredient("honeysuckle") && heat === "high" ? -18 : 0;
   const cultureBonus = (historyCorrect ? 8 : historyAnswered ? 3 : 0) + (dilemmaCorrect ? 8 : dilemmaAnswered ? 3 : 0);
+  const intelBonus = intelUnlocked ? 8 : 0;
   const hintPenalty = hintsUsed * difficulty().hintPenalty;
   const prepRatio = prepScore / (activeTea.ingredients.length * 20);
   const steamBonus = (labMetrics ? 10 : 0) + (innovation.product ? 8 : 0);
-  const rawTotal = gatherScore * 0.22 + prepRatio * 22 + 24 + heatBonus + cultureBonus + steamBonus + difficulty().supportBonus - hintPenalty - waterPenalty - timePenalty;
+  const rawTotal = gatherScore * 0.22 + prepRatio * 22 + 24 + heatBonus + heatScienceBonus + cultureBonus + intelBonus + steamBonus + difficulty().supportBonus - hintPenalty - waterPenalty - timePenalty;
   const total = Math.max(0, Math.min(100, Math.round(rawTotal * difficulty().scoreMultiplier)));
   addInsight(`創新方案：${optionById("product", innovation.product).name}配合${optionById("sensor", innovation.sensor).name}，以${optionById("audience", innovation.audience).name}為對象。`);
   const record = updateRecord(total);
@@ -1264,12 +1498,24 @@ function renderResult() {
           <p>${difficulty().name}模式：${difficulty().text}</p>
         </article>
         <article>
+          <h3>史料情報運用</h3>
+          <p>${intelUnlocked ? `你已把「${activeTea.intel.title}」轉化為破關線索：${activeTea.intel.recipeHint}` : "你未整理史料情報。下次先讀 NPC 情報卡，會更容易推敲配方與火候。"}</p>
+        </article>
+        <article>
           <h3>STEAM 數據摘要</h3>
           <p>${labMetrics ? `水量 ${lab.water}ml，時間 ${lab.time}分鐘，火力 ${lab.heat}%，藥材比例 ${lab.ratio}%；苦味 ${labMetrics.bitterness}，茶色 ${labMetrics.color}，溫度 ${labMetrics.temperature}°C，pH ${labMetrics.ph}，濕熱應對指數 ${labMetrics.dampHeat}。` : "尚未完成科學實驗室。"}</p>
         </article>
         <article>
           <h3>創新方案摘要</h3>
           <p>${optionById("product", innovation.product).name}配合${optionById("sensor", innovation.sensor).name}，服務${optionById("audience", innovation.audience).name}，突出${optionById("value", innovation.value).name}。創新方案即時評分：${calculateInnovationScore()}。</p>
+        </article>
+        <article class="submission-summary">
+          <h3>評審提交摘要</h3>
+          <p><b>閱讀篇章：</b>香港涼茶由嶺南藥草飲、街頭涼茶舖到國家級非物質文化遺產，反映氣候、社區和傳承需要。</p>
+          <p><b>解決問題：</b>讓學生用遊戲理解涼茶不是普通飲品，而是可被閱讀、實驗、設計和保育的生活文化。</p>
+          <p><b>STEAM 元素：</b>科學分析苦味、pH、溫度與茶色；科技使用${optionById("sensor", innovation.sensor).name}；工程設計${optionById("product", innovation.product).name}；藝術呈現香港涼茶舖美感；數學用分數與指數比較成效。</p>
+          <p><b>價值觀與原創：</b>以${optionById("audience", innovation.audience).name}為對象，突出${optionById("value", innovation.value).name}，把史料閱讀、科學實驗和非遺保育放進同一個互動任務。</p>
+          <p><b>真實驗證：</b>可用溫度探針、pH 試紙或感測器、顏色辨識和濕度感測，把遊戲假設帶回校園實驗。</p>
         </article>
         <article>
           <h3>個人記錄</h3>
@@ -1308,16 +1554,19 @@ function resetGame() {
   hintsUsed = 0;
   insightLog = [];
   labMetrics = null;
+  intelUnlocked = false;
   stopNeedle();
   stopCooking();
   $("#history-screen").innerHTML = `
     <div class="empty-state">
       <div class="stamp-block">茶</div>
-      <p>先選一款涼茶。你會完成「街坊個案、歷史題、採藥問答、炮製手藝、煲茶火候、科學實驗、創新方案」七步 STEAM 任務。</p>
+      <h3>還未選任務卡</h3>
+      <p>請先到「先選一張涼茶任務卡」。點擊任務卡後，這裡會自動進入 NPC 個案和史料情報。</p>
+      <a class="primary-action" href="#tea-menu">前往選任務卡</a>
     </div>
   `;
-  coachLine.textContent = "歡迎來到涼茶歷史課。好遊戲不是只要贏，而是讓你玩完之後看得懂一間老涼茶舖，也能提出創新方案。";
-  setStage("history", "選一款涼茶", "準備上課");
+  coachLine.textContent = "先選一張任務卡，再開始 NPC 個案。好的課堂遊戲要讓路線清楚，學生才會放心探索。";
+  setStage("history", "等待選擇任務卡", "準備上課");
 }
 
 teaGrid.addEventListener("click", (event) => {
@@ -1354,6 +1603,7 @@ difficultySelector?.addEventListener("click", (event) => {
   renderDifficultySelector();
   coachLine.textContent = `已切換至${difficulty().name}模式：${difficulty().text}`;
   if (document.querySelector("#gather-screen.active-stage")) renderGather();
+  if (document.querySelector("#cook-screen.active-stage")) renderCook();
 });
 
 renderDifficultySelector();
