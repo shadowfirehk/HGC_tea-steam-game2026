@@ -1675,11 +1675,12 @@ function renderLab() {
       <section class="lab-panel">
         <span class="era-chip">STEAM 科學探究</span>
         <h3>涼茶科學實驗室</h3>
-        <p>調整水量、時間、火力和藥材比例，觀察苦味值、茶色、溫度、pH 與「濕熱應對指數」如何變化。這是模擬數據，用來訓練假設、變項控制和資料解讀。</p>
+        <p>調整水量、時間、火力和藥材比例，觀察苦味值、茶色、溫度、pH 與「濕熱應對指數」如何變化。這些數據會同時對照中醫藥學的「藥食同源」與「辨證論治」，讓學生明白涼茶是嶺南民間中醫智慧的實踐。</p>
         ${renderSlider("water", "水量", lab.water, 1200, 2600, 100, "ml")}
         ${renderSlider("time", "煲製時間", lab.time, 10, 60, 1, "分鐘")}
-        ${renderSlider("heat", "火力", lab.heat, 30, 100, 5, "%")}
+        ${renderSlider("heat", "火力（文火／武火）", lab.heat, 30, 100, 5, "%")}
         ${renderSlider("ratio", "藥材比例", lab.ratio, 60, 150, 5, "%")}
+        ${renderTcmLabBridge()}
         ${renderFormulaNote()}
         <div class="button-row">
           <button class="solid-button" type="button" id="record-lab">記錄實驗結果</button>
@@ -1708,12 +1709,14 @@ function renderLab() {
           <p>1894 年街頭涼茶宜用厚底瓷碗、帶蓋瓷盅或由銅葫蘆倒出；茶湯多為深褐至黑棕，帶微渾濁與少量藥渣。</p>
         </div>
         <section class="principle-card">
-          <h3>STEAM 原理說明</h3>
+          <h3>STEAM 與中醫藥原理說明</h3>
           <ul>
             <li><b>苦味值：</b>藥材比例越高、水量越少、時間越長，濃度上升，苦味值提高。</li>
             <li><b>pH：</b>以模擬方式表示濃度與煲製時間對酸鹼度的影響，數值越低代表越偏酸。</li>
             <li><b>顏色：</b>夏枯草會令茶湯偏深褐至黑棕；金銀花比例高時茶色較偏黃綠，但傳統涼茶通常仍帶渾濁與藥渣感。</li>
-            <li><b>火候：</b>金銀花等花葉類藥材忌猛火久熬；中火微沸或後下能減少揮發性成分流失。</li>
+            <li><b>文火／武火：</b>武火用於迅速煮沸，文火用於慢熬萃取；花葉類藥材忌猛火久熬，根莖硬材則需要較長時間讓黃酮類、生物鹼、苦味素等成分釋放。</li>
+            <li><b>藥食同源：</b>涼茶不是普通汽水，而是把可食、可飲的草木材料變成日常調理方法，體現中醫藥學在民間生活中的實踐。</li>
+            <li><b>辨證論治：</b>不同體質、季節和症狀不應飲同一款茶；濕熱、風熱、喉痛、清潤或勞工疲累，都要配合不同配方與火候。</li>
             <li><b>濕熱應對指數：</b>綜合濃度、時間、火候是否符合藥材特性和水量是否足夠，用來討論配方是否能回應嶺南濕熱環境。</li>
           </ul>
         </section>
@@ -1739,8 +1742,51 @@ function renderFormulaNote() {
   if (containsIngredient("honeysuckle")) notes.push("金銀花：花葉類，宜中火微沸或後下，忌猛火久熬。");
   if (containsIngredient("selfheal")) notes.push("夏枯草：乾燥果穗令茶色加深，常呈深褐至黑棕。");
   if (containsIngredient("licorice")) notes.push("甘草：根片帶天然甜味，可調和苦味。");
+  if (containsIngredient("mint")) notes.push("薄荷：芳香葉類，宣肺利咽，宜後下短煎以保留揮發性成分。");
   if (!notes.length) return "";
   return `<section class="formula-note"><h4>藥材藥理提示</h4>${notes.map((note) => `<p>${note}</p>`).join("")}</section>`;
+}
+
+function tcmHeatLabel() {
+  if (lab.heat >= 90) return { name: "武火急煎", note: "適合先煮沸或處理粗根硬莖，但花葉芳香藥材不宜長時間承受。" };
+  if (lab.heat >= 70) return { name: "中火微沸", note: "適合多數花葉與複方配方，能兼顧釋放成分與保留香氣。" };
+  return { name: "文火慢熬", note: "適合慢慢萃取根莖類材料，也可避免清潤配方變得過苦。" };
+}
+
+function tcmPatternLabel() {
+  const patterns = {
+    "five-flower": "暑濕初起：宜溫和祛濕，重視家庭日常防病。",
+    "twenty-four": "熱毒瘴癘：宜複方清解，但要留意體質寒涼者不宜亂飲。",
+    "cold-tea": "風熱感冒：宜宣肺利咽，芳香葉類後下短煎。",
+    "three-winter": "咽喉風熱：宜清喉，重視傳統經驗與植物研究互證。",
+    "jigucao-tea": "濕熱食滯：宜祛濕消滯，不是越苦越好。",
+    "sugarcane-root": "清潤護喉：宜水量充足、火候平穩，適合家庭日常。",
+    "old-hk": "社區照顧：在資源有限下兼顧節水、保溫與街坊需要。"
+  };
+  return patterns[activeTea.id] || "辨證論治：先看季節、體質和症狀，再選配方。";
+}
+
+function renderTcmLabBridge() {
+  const heatLabel = tcmHeatLabel();
+  return `
+    <section class="tcm-bridge">
+      <span class="era-chip">中醫藥學對照</span>
+      <div class="tcm-grid">
+        <article>
+          <strong>${heatLabel.name}</strong>
+          <p>${heatLabel.note}</p>
+        </article>
+        <article>
+          <strong>藥食同源</strong>
+          <p>草木既是生活飲品材料，也是民間調理身體的媒介；涼茶正是嶺南飲食與中醫藥智慧的交界。</p>
+        </article>
+        <article>
+          <strong>辨證論治</strong>
+          <p>${tcmPatternLabel()}</p>
+        </article>
+      </div>
+    </section>
+  `;
 }
 
 function renderTeaAppearance() {
