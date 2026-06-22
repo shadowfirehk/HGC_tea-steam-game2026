@@ -197,12 +197,12 @@ const teas = [
     npc: { name: "阿芬", role: "1960年代製衣廠女工", symbol: "工", type: "worker" },
     intel: {
       title: "工廠區涼茶舖排隊記",
-      source: "「製衣車間棉絮飛揚，窗少風弱。工人日做十小時，喉乾頭痛，卻怕請假扣工錢。下班後，涼茶舖前人龍最長。」",
+      source: "「製衣車間棉絮飛揚，窗少風弱。工人日做十小時，喉乾頭痛，卻怕請假扣工錢。下班後，涼茶舖前人龍最長。東華三院等慈善機構亦以中醫藥贈醫施藥，支援基層市民。」",
       clues: ["背景是工廠化與基層勞動", "症狀是喉乾、頭痛、初起感冒", "芳香宣肺藥材宜後下短煎"],
       recipeHint: "情報推論：感冒茶需清熱解表、宣肺利咽；薄荷等芳香葉類應後下短煎，不宜長時間猛火。"
     },
     learningGoals: ["理解 1960 年代香港工業化與勞工健康", "從史料推論基層工人的醫療選擇", "分辨芳香葉類藥材的火候控制"],
-    story: "六十年代香港製衣業與電子業蓬勃，工廠區通風不足、棉絮飛揚，很多工人小病也不敢請假。傳統感冒茶反映涼茶舖如何成為基層勞工快速調理和互相支持的地方。",
+    story: "六十年代香港製衣業與電子業蓬勃，工廠區通風不足、棉絮飛揚，很多工人小病也不敢請假。除了民間涼茶舖，東華三院等慈善機構亦以中醫藥贈醫施藥支援基層。傳統感冒茶反映香港社區如何回應勞工健康問題。",
     dilemma: {
       question: "面對這位工人，你最應先理解甚麼？",
       options: ["她不是貪方便，而是受工作環境和經濟壓力影響", "她只是追求時尚飲品", "她一定要飲最苦廿四味才算有效"],
@@ -302,12 +302,12 @@ const teas = [
     npc: { name: "華叔", role: "舊香港涼茶師傅", symbol: "舖", type: "master" },
     intel: {
       title: "舊香港收檔人情錄",
-      source: "「貧童無錢看病，收檔前仍留淡茶一碗。銅壺不只盛藥，也盛街坊消息。若遇制水年月，更要惜水儲水。」",
+      source: "「貧童無錢看病，收檔前仍留淡茶一碗。銅壺不只盛藥，也盛街坊消息。若遇制水年月，更要惜水儲水；東華三院等慈善機構亦以贈醫施藥協助市民渡過困境。」",
       clues: ["涼茶舖有社區互助功能", "淡茶照顧弱勢，不只追求濃苦", "1963 制水提醒玩家考慮水資源與工程儲備"],
       recipeHint: "情報推論：舊香港街坊涼茶要兼顧人情與資源，水量較省，火候要穩，並思考儲水過濾方案。"
     },
     learningGoals: ["理解涼茶舖的社會功能", "認識「寡佬茶」與勞工生活", "思考文化遺產中的人情與公共性"],
-    story: "四五十年代香港貧窮，很多人看不起病。涼茶師傅有時會讓生病的孩子免費喝一碗淡涼茶，收攤時路邊流浪漢也能喝到殘餘藥湯。涼茶不止是飲品，也曾是底層窮人的廉價醫藥與街坊溫情。",
+    story: "四五十年代香港貧窮，很多人看不起病。涼茶師傅有時會讓生病的孩子免費喝一碗淡涼茶，收攤時路邊流浪漢也能喝到殘餘藥湯。到 1963 年香港大制水，基層市民生活困苦，中暑和腸胃病頻發；除了民間自發煲製涼茶外，東華三院等慈善機構亦積極為市民提供中醫藥贈醫施藥服務，協助大眾共渡時艱。",
     dilemma: {
       question: "這個故事最適合讓玩家學到甚麼？",
       options: ["涼茶舖承載街坊社交和底層互助", "涼茶舖只是一部自動售賣機", "文化只等於商品包裝"],
@@ -333,6 +333,7 @@ const archiveUnlocks = {
     label: "五花茶：嶺南氣候與家庭防病",
     documents: [
       {
+        sourceType: "【二手史料 / Secondary Source】民間風俗紀錄整理",
         title: "文獻 A：民國時期嶺南民間風俗紀錄（模擬史料）",
         text: "嶺南夏日冗長，自四月至十月皆酷熱難耐。平民之家，常受「暑濕」所困，症見身熱口渴、小便短赤、精神倦怠。坊間傳承「五花」之方，採金銀花、菊花、雞蛋花、木棉花、槐花熬製。此方不似廿四味之苦澀，其氣芳香，微甜易入口，婦孺皆樂意飲用，為仲夏家居常備之茶。"
       }
@@ -364,10 +365,12 @@ const archiveUnlocks = {
     label: "廿四味：1894 鼠疫與太平山街",
     documents: [
       {
+        sourceType: "【一手史料 / Primary Source】改編自當年華人聯署書信",
         title: "文獻甲：1894 年香港華人對殖民地防疫措施之恐懼（改編史料）",
         text: "日前面臨疫症，潔淨局官員強行進入華人住宅，搜查病者。凡有染病，即強制擄至西醫船隔離，更將死者剖腹檢查。華人社會大為震恐，深恐西醫割體剜眼，且船上斷絕家人音訊，與送死無異。基層百姓寧可隱瞞病情，藏匿於唐樓之中，尋求坊間草藥煎熬，亦不願向官府通報。"
       },
       {
+        sourceType: "【二手史料 / Secondary Source】中醫藥文獻現代整理",
         title: "文獻乙：嶺南草藥文獻關於廿四味之記載（模擬史料）",
         text: "廿四味並非固定方劑，常隨四時感冒調整。其主料多為嶺南本土野生之剛烈草藥，如三椏苦、崗梅根、九層糕、苦瓜乾等。此等藥材多屬樹皮、粗根、硬莖，極其苦澀，能清解入血之熱毒與瘴癘。於 1894 年大疫期間，上環一帶涼茶檔夜夜開爐，煎製黑苦茶，苦力走卒皆視之為避疫、抗發熱之護身符。"
       }
@@ -399,8 +402,9 @@ const archiveUnlocks = {
     label: "傳統感冒茶：1960 年代工廠化與勞工健康",
     documents: [
       {
+        sourceType: "【二手史料 / Secondary Source】工業發展與勞工健康報告節錄",
         title: "文獻 B：1960 年代香港工業發展與勞工健康報告（節錄）",
-        text: "六十年代，香港製衣業與電子業蓬勃。新蒲崗、觀塘一帶工廠林立。數以萬計之工廠妹與男工，每日於通風不良、棉絮飛揚之車間工作逾十小時。工人常感喉嚨乾涸、頭痛發熱、感冒流涕。由於手工業計件工資微薄，工人不願請假就醫。每逢下班，工廠區外之涼茶舖便擠滿勞工，急需一碗能強效解表、驅風散寒之感冒茶，喝完矇頭大睡，翌日繼續開工。"
+        text: "六十年代，香港製衣業與電子業蓬勃。新蒲崗、觀塘一帶工廠林立。數以萬計之工廠妹與男工，每日於通風不良、棉絮飛揚之車間工作逾十小時。工人常感喉嚨乾涸、頭痛發熱、感冒流涕。由於手工業計件工資微薄，工人不願請假就醫。每逢下班，工廠區外之涼茶舖便擠滿勞工；同時，東華三院等慈善機構亦透過中醫藥贈醫施藥支援基層，反映社會互助網絡的重要。"
       }
     ],
     questions: [
@@ -430,6 +434,7 @@ const archiveUnlocks = {
     label: "三冬茶：香港植物學與本土研究",
     documents: [
       {
+        sourceType: "【二手史料 / Secondary Source】人物訪談與植物學研究整理",
         title: "人物訪談：胡秀英教授與香港本土植物研究（模擬整理）",
         text: "植物學者把童年病患經驗、本土植物採集和現代研究結合，將崗梅、救必應、苦丁茶等冬青科植物轉化成三冬茶配方。這個故事顯示傳統經驗可以經由觀察、分類與整理，成為可討論、可驗證的知識。"
       }
@@ -453,6 +458,7 @@ const archiveUnlocks = {
     label: "雞骨草茶：嶺南濕熱生活",
     documents: [
       {
+        sourceType: "【二手史料 / Secondary Source】地方志與民俗研究整理",
         title: "地方志摘錄：嶺南濕熱與日常飲食（模擬史料）",
         text: "嶺南地區暑濕重，居民常以雞骨草、夏枯草等草藥煲飲，回應飲食油膩、濕熱不適與社區日常保健需要。"
       }
@@ -476,6 +482,7 @@ const archiveUnlocks = {
     label: "竹蔗茅根：家庭清潤飲食",
     documents: [
       {
+        sourceType: "【一手史料 / Primary Source】口述歷史整理",
         title: "口述歷史：夏日家庭清潤飲品（模擬整理）",
         text: "老街坊回憶夏日家中常煲竹蔗茅根水，味道清甜，適合一家大小飲用，也反映涼茶不只治病，還是家庭照顧與日常養生。"
       }
@@ -499,8 +506,9 @@ const archiveUnlocks = {
     label: "舊香港涼茶舖：制水危機與社區照顧",
     documents: [
       {
+        sourceType: "【一手史料 / Primary Source】1963 年大制水報紙剪報（模擬）",
         title: "報紙剪報：1963 年香港制水（模擬史料）",
-        text: "1963 年香港曾實施制水，市民珍惜每一滴水。傳統涼茶舖既要照顧街坊，也要思考儲水、節水和保溫器具的運用。"
+        text: "1963 年香港大制水，基層市民生活困苦，中暑和腸胃病頻發。當時除了民間自發煲製涼茶外，東華三院等慈善機構亦積極為市民提供中醫藥贈醫施藥服務，協助大眾共渡時艱。傳統涼茶舖既要照顧街坊，也要思考儲水、節水和保溫器具的運用。"
       }
     ],
     questions: [
@@ -762,7 +770,7 @@ function addInsight(text) {
 }
 
 function blankRecord() {
-  return { completed: {}, bestScores: {}, archives: {}, lastPlayed: null };
+  return { completed: {}, bestScores: {}, archives: {}, archiveAnswers: {}, lastPlayed: null };
 }
 
 function normalizeRecord(record = {}) {
@@ -770,6 +778,7 @@ function normalizeRecord(record = {}) {
     completed: record.completed || {},
     bestScores: record.bestScores || {},
     archives: record.archives || {},
+    archiveAnswers: record.archiveAnswers || {},
     lastPlayed: record.lastPlayed || null
   };
 }
@@ -1032,6 +1041,7 @@ function openArchiveModal(teaId) {
       <div class="archive-documents">
         ${archive.documents.map((doc) => `
           <article class="archive-document">
+            ${doc.sourceType ? `<span class="source-type">${doc.sourceType}</span>` : ""}
             <h4>${doc.title}</h4>
             <p>${doc.text}</p>
           </article>
@@ -1071,9 +1081,18 @@ function verifyArchiveReport(teaId) {
   const tea = teas.find((item) => item.id === teaId);
   if (!archive || !tea) return;
 
+  const answerSnapshots = [];
   const results = archive.questions.map((question, index) => {
     const selected = selectedArchiveAnswers(index);
     const correct = sameAnswers(selected, question.answers);
+    answerSnapshots.push({
+      tag: question.tag,
+      question: question.question,
+      selected,
+      selectedText: selected.map((optionIndex) => question.options[optionIndex]),
+      answers: question.answers,
+      answerText: question.answers.map((optionIndex) => question.options[optionIndex])
+    });
     const explain = $(`#archive-explain-${index}`);
     if (explain) {
       explain.textContent = `${correct ? "正確。" : "未完成或答案未準確。"}${question.explain}`;
@@ -1092,6 +1111,7 @@ function verifyArchiveReport(teaId) {
 
   const record = loadRecord();
   record.archives[teaId] = true;
+  record.archiveAnswers[teaId] = answerSnapshots;
   saveRecord(record);
   addInsight(`歷史檔案館：${archive.successText}`);
   if (feedback) {
@@ -1216,6 +1236,9 @@ function selectTea(teaId) {
   coachLine.textContent = `今日你是涼茶舖小師傅。任務是煲好「${activeTea.name}」，再把歷史變成 STEAM 創新方案。`;
   renderHistory();
   history.replaceState(null, "", "#game-panel");
+  requestAnimationFrame(() => {
+    $("#game-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 }
 
 function renderHistory() {
@@ -1708,6 +1731,7 @@ function renderLab() {
           <span class="porcelain-bowl" aria-hidden="true"><i></i></span>
           <p>1894 年街頭涼茶宜用厚底瓷碗、帶蓋瓷盅或由銅葫蘆倒出；茶湯多為深褐至黑棕，帶微渾濁與少量藥渣。</p>
         </div>
+        ${renderLabFeedback()}
         <section class="principle-card">
           <h3>STEAM 與中醫藥原理說明</h3>
           <ul>
@@ -1731,7 +1755,8 @@ function renderLab() {
   });
   $("#record-lab").addEventListener("click", () => {
     addInsight(`科學實驗：水量 ${lab.water}ml、時間 ${lab.time}分鐘、火力 ${lab.heat}%、藥材 ${lab.ratio}% 時，苦味 ${labMetrics.bitterness}、pH ${labMetrics.ph}、濕熱應對指數 ${labMetrics.dampHeat}。`);
-    coachLine.textContent = "已記錄實驗數據。這就是 STEAM 的 S 和 M：用變項和數據說明涼茶煲製。";
+    const feedback = labTeachingFeedback();
+    coachLine.textContent = feedback[0] || "已記錄實驗數據。這就是 STEAM 的 S 和 M：用變項和數據說明涼茶煲製。";
   });
   $("#go-innovation").addEventListener("click", renderInnovation);
   setStage("lab", "涼茶科學實驗室", "第五關：STEAM 數據探究");
@@ -1785,6 +1810,44 @@ function renderTcmLabBridge() {
           <p>${tcmPatternLabel()}</p>
         </article>
       </div>
+    </section>
+  `;
+}
+
+function labTeachingFeedback() {
+  if (!labMetrics || !activeTea) return [];
+  const feedback = [];
+  const phValue = Number(labMetrics.ph);
+  if (labMetrics.flowerPenalty > 0) {
+    feedback.push("花葉或芳香類藥材受熱太久或火力太高，揮發性成分會隨蒸氣流失；可降低火力或縮短時間。");
+  }
+  if (activeTea.id === "twenty-four" && (lab.time < 38 || lab.heat < 65)) {
+    feedback.push("廿四味多含粗根、硬莖與樹皮，萃取不足會令有效成分難以從木質部溶出；可先提高火力煮沸，再延長文火時間。");
+  }
+  if (activeTea.id === "cold-tea" && lab.time > 28) {
+    feedback.push("感冒茶含薄荷等芳香葉類，久煎會使芳香成分散失；可改為短煎或後下。");
+  }
+  if (phValue < 4.8) {
+    feedback.push("pH 模擬值偏低，代表濃度與煲製時間可能過高；請增加水量或降低藥材比例，觀察酸鹼度如何回到較平衡狀態。");
+  }
+  if (phValue > 6.6) {
+    feedback.push("pH 模擬值偏高，茶湯可能過淡，部分成分溶出不足；請適度增加煲製時間或藥材比例。");
+  }
+  if (labMetrics.bitterness > 82) {
+    feedback.push("苦味值過高會降低街坊接受度；可增加水量、降低藥材比例，或加入甘草等調和材料作比較。");
+  }
+  if (labMetrics.dampHeat < 58) {
+    feedback.push("濕熱應對指數偏低，表示水量、時間、火力與藥材特性未配合；請先回看史料，判斷這款茶屬花葉短煎、根莖長熬，還是清潤慢火。");
+  }
+  return feedback.length ? feedback.slice(0, 3) : ["數據接近合理範圍。你可以用溫度探針、pH 試紙和顏色辨識，把遊戲假設帶到真實實驗驗證。"];
+}
+
+function renderLabFeedback() {
+  const feedback = labTeachingFeedback();
+  return `
+    <section class="instruction-feedback">
+      <h3>教學回饋：下一步怎樣改良？</h3>
+      <ul>${feedback.map((item) => `<li>${item}</li>`).join("")}</ul>
     </section>
   `;
 }
@@ -1931,6 +1994,79 @@ function renderOptionGroup(group, title) {
   `;
 }
 
+function renderArchiveAnswerReport(record) {
+  const archive = archiveForTea(activeTea);
+  const answers = record.archiveAnswers?.[activeTea.id] || [];
+  if (!archive) return "<p>本任務沒有額外鎖定檔案，但已完成遊戲內史料判斷。</p>";
+  if (!answers.length) return "<p>已解鎖檔案，但未保存作答詳情；可重新提交考證報告以加入完整答案。</p>";
+  return `
+    <div class="report-answer-list">
+      ${answers.map((item, index) => `
+        <article>
+          <strong>${index + 1}. ${item.tag}</strong>
+          <p>${item.question}</p>
+          <p><b>我的答案：</b>${item.selectedText.join("；")}</p>
+          <p><b>建議答案：</b>${item.answerText.join("；")}</p>
+        </article>
+      `).join("")}
+    </div>
+  `;
+}
+
+function renderSourceTypeReport() {
+  const archive = archiveForTea(activeTea);
+  if (!archive) return "";
+  return archive.documents.map((doc) => `<li>${doc.sourceType || "【未標註史料屬性】"}${doc.title}</li>`).join("");
+}
+
+function renderStudyReport(total, rating, frame, badges, record) {
+  const product = optionById("product", innovation.product);
+  const sensor = optionById("sensor", innovation.sensor);
+  const audience = optionById("audience", innovation.audience);
+  const value = optionById("value", innovation.value);
+  const reportDate = new Date().toLocaleDateString("zh-HK");
+  return `
+    <section id="study-report" class="study-report" aria-label="我的研習報告">
+      <header>
+        <span>香港歷史閱讀 × STEAM 研習報告</span>
+        <h1>一碗百苦：STEAM 探索解鎖老香港街坊的苦與樂</h1>
+        <p>學生：${escapeHtml(currentPlayerName())}　日期：${reportDate}　任務：${activeTea.name}　評級：${rating}（${total} 分）</p>
+      </header>
+      <section>
+        <h2>一、史料閱讀與辨識</h2>
+        <ul>${renderSourceTypeReport() || "<li>以遊戲內史料卡與 NPC 情報作閱讀材料。</li>"}</ul>
+        ${renderArchiveAnswerReport(record)}
+      </section>
+      <section>
+        <h2>二、由史料推論香港問題</h2>
+        <p><b>閱讀基礎：</b>${frame.reading}</p>
+        <p><b>推論問題：</b>${frame.problem}</p>
+        <p><b>價值觀：</b>${frame.value}</p>
+      </section>
+      <section>
+        <h2>三、STEAM 實驗數據</h2>
+        <table>
+          <tbody>
+            <tr><th>水量</th><td>${lab.water} ml</td><th>時間</th><td>${lab.time} 分鐘</td></tr>
+            <tr><th>火力</th><td>${lab.heat}%（${tcmHeatLabel().name}）</td><th>藥材比例</th><td>${lab.ratio}%</td></tr>
+            <tr><th>溫度</th><td>${labMetrics.temperature}°C</td><th>pH</th><td>${labMetrics.ph}</td></tr>
+            <tr><th>苦味值</th><td>${labMetrics.bitterness}</td><th>濕熱應對指數</th><td>${labMetrics.dampHeat}</td></tr>
+          </tbody>
+        </table>
+        <p><b>科學回饋：</b>${labTeachingFeedback()[0]}</p>
+      </section>
+      <section>
+        <h2>四、創新方案</h2>
+        <p><b>作品形式：</b>${product.name}，${product.text}</p>
+        <p><b>感測工具：</b>${sensor.name}，${sensor.text}</p>
+        <p><b>展示對象：</b>${audience.name}，${audience.text}</p>
+        <p><b>保育目的：</b>${value.name}，${value.text}</p>
+        <p><b>徽章：</b>${badges.join("、")}</p>
+      </section>
+    </section>
+  `;
+}
+
 function badgeForScore(total, record = loadRecord()) {
   const badges = [];
   if (archiveForTea(activeTea) && record.archives?.[activeTea.id]) badges.push("歷史檔案解謎徽章");
@@ -2020,14 +2156,17 @@ function renderResult() {
           <h3>你的學習筆記</h3>
           <ul class="insight-list">${insightLog.slice(0, 6).map((item) => `<li>${item}</li>`).join("") || "<li>再玩一次，收集更多筆記。</li>"}</ul>
         </article>
+        ${renderStudyReport(total, rating, frame, badges, record)}
         <div class="button-row">
           <button class="solid-button" type="button" id="play-again">再玩這款</button>
+          <button class="ghost-button" type="button" id="print-report">導出/打印我的研習報告</button>
           <a class="ghost-button" href="#tea-menu">選另一款</a>
         </div>
       </div>
     </div>
   `;
   $("#play-again").addEventListener("click", () => selectTea(activeTea.id));
+  $("#print-report").addEventListener("click", () => window.print());
   coachLine.textContent = total >= 86 ? "好，這碗有資格放在銅壺旁邊，也有資格放進 STEAM 展館。" : "再來一次，讓配方、數據和創新理念一起進步。";
   setStage("result", "出爐評分", "第八關：總結回顧");
 }
@@ -2061,7 +2200,9 @@ function resetGame() {
     </div>
   `;
   coachLine.textContent = "先選一張任務卡，再開始 NPC 個案。好的課堂遊戲要讓路線清楚，學生才會放心探索。";
-  setStage("history", "等待選擇任務卡", "準備上課");
+  setStage("history", "等待選擇任務卡", "準備上課", { scroll: false });
+  history.replaceState(null, "", "#app");
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 teaGrid.addEventListener("click", (event) => {
